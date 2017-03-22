@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Kimberley;
+    src: url("../../fonts/kimberley bl.ttf");
+}
+
+@font-face {
+    font-family: Bank;
+    src: url("../../fonts/Bank Gothic Medium BT.ttf");
+}
+
+#wrapper {
+    background: magenta;
+    height: 100vh;
+}
+
+.player {
+    background: black;
+    height: 100vh;
+    width: 15%;
+    padding: 15px;
+}
+.player_name, .list_name {
+    font-family: Bank;
+    color: white;
+}
+
+.pilot {
+    color: white;
+    font-family: Kimberley;
+}
+
+#testing {
+    color: white;
+}
+.skill {
+    color: #f57f20;
+}
+
+.attack {
+    color: #cd1b3d;
+}
+
+.agility {
+    color: #6dbe45;
+}
+
+.hull {
+    color: #eeea1e;
+}
+
+.shields {
+    color: #7fd5e7;
+}
+
+.marquee {
+  overflow: hidden;
+}

@@ -2,7 +2,7 @@
 ### Python template
 .idea/
 components/
-static/
+staticfiles/
 xwingoverlayer.sqlite3
 # Byte-compiled / optimized / DLL files
 __pycache__/
