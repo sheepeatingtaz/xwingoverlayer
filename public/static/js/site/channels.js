@@ -1,33 +1,38 @@
-$(function() {
+$(function () {
     // When we're using HTTPS, use WSS too.
     var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
-    var chatsock = new ReconnectingWebSocket(ws_scheme + '://' + window.location.host + "/match" + window.location.pathname);
-    
-    chatsock.onmessage = function(message) {
-        var data = JSON.parse(message.data);
-        var chat = $("#chat")
-        var ele = $('<tr></tr>')
+    var ws_path = ws_scheme + '://' + window.location.host + "/match/" + match_id;
+    var socket = new ReconnectingWebSocket(ws_path);
 
-        ele.append(
-            $("<td></td>").text(data.timestamp)
-        )
-        ele.append(
-            $("<td></td>").text(data.handle)
-        )
-        ele.append(
-            $("<td></td>").text(data.message)
-        )
-        
-        chat.append(ele)
-    };
-
-    $("#chatform").on("submit", function(event) {
+    $('.upgrade-control').click(function () {
         var message = {
-            handle: $('#handle').val(),
-            message: $('#message').val(),
-        }
-        chatsock.send(JSON.stringify(message));
-        $("#message").val('').focus();
+            type: "upgrade",
+            id: $(this).attr("id").replace(/upgrade-/gi, ''),
+            value: $(this).is(":checked")
+        };
+        socket.send(JSON.stringify(message));
         return false;
     });
+    $('.stat-control').change(function () {
+        var data = $(this).attr("id").split("-");
+        var message = {
+            type: "stat",
+            field: data[0],
+            id: data[1],
+            value: $(this).val()
+        };
+        socket.send(JSON.stringify(message));
+    });
+
+    socket.onmessage = function (message) {
+        var data = JSON.parse(message.data);
+        if (data.type == "upgrade") {
+            $('#upgrade-' + data.id).prop('checked', data.value);
+        }
+        if (data.type == "stat") {
+            $('#'+data.field+'-'+data.id).text(data.value);
+            $('#'+data.field+'-'+data.id).val(data.value);
+        }
+    };
+
 });

@@ -2,27 +2,35 @@ import json
 
 from channels import Group
 from channels.sessions import channel_session
-from matches.models import Match
+
+from matches.models import MatchUpgrade, MatchPilot
 
 
 @channel_session
 def ws_connect(message):
-    prefix, match_id, suffix = message['path'].strip('/').split('/')
-    match = Match.objects.get(pk=match_id)
-    # print(prefix, match_id, match)
+    prefix, match_id = message['path'].strip('/').split('/')
     Group('match-{}'.format(match_id)).add(message.reply_channel)
-    # print("Group Added")
     message.channel_session['match'] = '{}'.format(match_id)
-    # print("Session Set")
+    Group('match-{}'.format(match_id)).send({"accept": True})
 
 
 @channel_session
 def ws_receive(message):
     match_id = message.channel_session['match']
-    match = Match.objects.get(pk=match_id)
     data = json.loads(message['text'])
-    m = match.messages.create(handle=data['handle'], message=data['message'])
-    Group('match-{}'.format(match_id)).send({'text': json.dumps(m.as_dict())})
+
+    if data.get("type") == "upgrade":
+        upgrade = MatchUpgrade.objects.get(pk=data.get('id'))
+        upgrade.active = bool(data.get('value'))
+        upgrade.save()
+        # data['upgrades'] =
+
+    if data.get("type") == "stat":
+        pilot = MatchPilot.objects.get(pk=data.get('id'))
+        setattr(pilot.stats, data.get('field'), data.get('value'))
+        pilot.stats.save()
+
+    Group('match-{}'.format(match_id)).send({'text': json.dumps(data)})
 
 
 @channel_session

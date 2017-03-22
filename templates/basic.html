@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block js %}
+    <script type='text/javascript'>
+    var match_id = {{ match.id }};
+    </script>
+
+    <script src="{% static "js/site/channels.js" %}"></script>
     <script src="{% static "js/site/match.js" %}"></script>
 {% endblock %}
 {% block css %}

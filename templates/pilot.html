@@ -19,10 +19,24 @@
         </div>
     </div>
     <div class="stats">
-        <span class="skill">{{ pilot.stats.skill }}</span>
-        <span class="attack"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>&nbsp;{{ pilot.stats.attack }}</span>
-        <span class="agility"><i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>&nbsp;{{ pilot.stats.agility }}</span>
-        <span class="hull"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>&nbsp;{{ pilot.stats.hull }}</span>
-        <span class="shields"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>&nbsp;{{ pilot.stats.shields }}</span>
+        <span class="skill">
+            <span id="skill-{{ pilot.id }}">{{ pilot.stats.skill }}</span>
+        </span>
+        <span class="attack">
+            <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>&nbsp;
+            <span id="attack-{{ pilot.id }}">{{ pilot.stats.attack }}</span>
+        </span>
+        <span class="agility">
+            <i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>&nbsp;
+            <span id="agility-{{ pilot.id }}">{{ pilot.stats.agility }}</span>
+        </span>
+        <span class="hull">
+            <i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>&nbsp;
+            <span id="hull-{{ pilot.id }}">{{ pilot.stats.hull }}</span>
+        </span>
+        <span class="shields">
+            <i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>&nbsp;
+            <span id="sheilds-{{ pilot.id }}">{{ pilot.stats.shields }}</span>
+        </span>
     </div>
 </div>
