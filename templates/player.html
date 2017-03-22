@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<div class="player_name">
+    {{ player.player_name }}
+</div>
+<div class="list_name">
+    {{ player.list_name }}
+</div>
+
+{% for pilot in player.pilots.all %}
+    {% include 'pilot.html' with pilot=pilot %}
+{% endfor %}
+
+<div id="testing">
+    <p>Hello!</p>
+</div>

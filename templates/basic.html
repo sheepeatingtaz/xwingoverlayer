@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="row">
+        <div class="player pull-left" id="player_one">
+            {% include 'player.html' with player=match.squad_one %}
+        </div>
+
+        <div class="player pull-right" id="player_two">
+            {% include 'player.html' with player=match.squad_two %}
+        </div>
+    </div>
+{% endblock %}

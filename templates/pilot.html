@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<div class="pilot">
+<div class="pilot_details">
+    <span class="ship-icon">
+        <i class="xwing-miniatures-ship xwing-miniatures-ship-{{ pilot.pilot.ship.xws }}"></i>
+    </span>&nbsp;
+    <span class="name">{{ pilot.pilot.name }}</span>&nbsp;
+    <span class="points">{{ pilot.points }}</span>
+    
+</div>
+    <div class="actions">
+        {% for action in pilot.pilot.slot_set.all %}
+            <i class="xwing-miniatures-font xwing-miniatures-font-{{ action|lower }}"></i>
+        {% endfor %}
+    </div>
+    <div class="upgrades">
+        <div class="marquee">
+            {{ pilot.upgrade_list|safe }}
+        </div>
+    </div>
+    <div class="stats">
+        <span class="skill">{{ pilot.stats.skill }}</span>
+        <span class="attack"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>&nbsp;{{ pilot.stats.attack }}</span>
+        <span class="agility"><i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>&nbsp;{{ pilot.stats.agility }}</span>
+        <span class="hull"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>&nbsp;{{ pilot.stats.hull }}</span>
+        <span class="shields"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>&nbsp;{{ pilot.stats.shields }}</span>
+    </div>
+</div>

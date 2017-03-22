@@ -1,0 +1,65 @@
+{
+  "description": "",
+  "faction": "rebel",
+  "name": "NovicesNew",
+  "pilots": [
+    {
+      "name": "bluesquadronnovice",
+      "points": 25,
+      "ship": "t70xwing",
+      "upgrades": {
+        "amd": [
+          "r2astromech"
+        ],
+        "mod": [
+          "integratedastromech"
+        ]
+      }
+    },
+    {
+      "name": "bluesquadronnovice",
+      "points": 25,
+      "ship": "t70xwing",
+      "upgrades": {
+        "amd": [
+          "r2astromech"
+        ],
+        "mod": [
+          "integratedastromech"
+        ]
+      }
+    },
+    {
+      "name": "bluesquadronnovice",
+      "points": 25,
+      "ship": "t70xwing",
+      "upgrades": {
+        "amd": [
+          "r2astromech"
+        ],
+        "mod": [
+          "integratedastromech"
+        ]
+      }
+    },
+    {
+      "name": "banditsquadronpilot",
+      "points": 12,
+      "ship": "z95headhunter"
+    },
+    {
+      "name": "banditsquadronpilot",
+      "points": 12,
+      "ship": "z95headhunter"
+    }
+  ],
+  "points": 99,
+  "vendor": {
+    "yasb": {
+      "builder": "(Yet Another) X-Wing Miniatures Squad Builder",
+      "builder_url": "https://geordanr.github.io/xwing/",
+      "link": "https://geordanr.github.io/xwing/?f=Rebel%20Alliance&d=v4!s!178:-1,2,-1:-1:20:;178:-1,2,-1:-1:20:;178:-1,2,-1:-1:20:;64:-1:-1:-1:;64:-1:-1:-1:&sn=NovicesNew"
+    }
+  },
+  "version": "0.3.0"
+}

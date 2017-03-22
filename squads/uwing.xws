@@ -1,0 +1,44 @@
+{
+    "version": "0.3.0",
+    "name": "Test",
+    "faction": "rebel",
+    "points": 63,
+    "pilots": [
+        {
+            "name": "cassianandor",
+            "ship": "uwing",
+            "points": 28,
+            "upgrades": {
+                "crew": [
+                    "chopper",
+                    "inspiringrecruit"
+                ]
+            }
+        },
+        {
+            "name": "neradantels",
+            "ship": "bwing",
+            "points": 35,
+            "upgrades": {
+                "torpedo": [
+                    "extramunitions",
+                    "extramunitions"
+                ],
+                "ept": [
+                    "veteraninstincts"
+                ],
+                "mod": [
+                    "shieldupgrade"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 678177,
+            "link": "http://xwing-builder.co.uk/view/678177/test",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}
