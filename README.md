@@ -10,6 +10,8 @@ When a match is created, a control panel is available that uses websockets to pu
 
 Uses lots of good stuff made by other people: please see point 1 in ToDo for why I've not listed them here...
 
+Feedback & Contributions welcome!
+
 ### ToDo:
 1. write a better readme
 2. make Control page nicer
