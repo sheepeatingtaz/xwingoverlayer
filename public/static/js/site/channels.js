@@ -5,9 +5,11 @@ $(function () {
     var socket = new ReconnectingWebSocket(ws_path);
 
     $('.upgrade-control').click(function () {
+        var data = $(this).attr("id").replace(/upgrade-/gi, '').split("-");
         var message = {
             type: "upgrade",
-            id: $(this).attr("id").replace(/upgrade-/gi, ''),
+            id: data[0],
+            pilot_id: data[1],
             value: $(this).is(":checked")
         };
         socket.send(JSON.stringify(message));
@@ -27,7 +29,9 @@ $(function () {
     socket.onmessage = function (message) {
         var data = JSON.parse(message.data);
         if (data.type == "upgrade") {
-            $('#upgrade-' + data.id).prop('checked', data.value);
+            $('#upgrade-' + data.id + "-" + data.pilot_id).prop('checked', data.value);
+            $('#upgrades-' + data.pilot_id).html(data.upgrades);
+            $('#upgrades-' + data.pilot_id).marquee();
         }
         if (data.type == "stat") {
             $('#'+data.field+'-'+data.id).text(data.value);

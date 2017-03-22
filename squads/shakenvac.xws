@@ -1,0 +1,68 @@
+{
+    "version": "0.3.0",
+    "name": "Shake 'n Vac",
+    "faction": "rebel",
+    "points": 100,
+    "pilots": [
+        {
+            "name": "corranhorn",
+            "ship": "ewing",
+            "points": 47,
+            "upgrades": {
+                "amd": [
+                    "r2d2"
+                ],
+                "system": [
+                    "firecontrolsystem"
+                ],
+                "ept": [
+                    "pushthelimit"
+                ],
+                "mod": [
+                    "stealthdevice"
+                ]
+            }
+        },
+        {
+            "name": "tychocelchu",
+            "ship": "awing",
+            "points": 35,
+            "upgrades": {
+                "title": [
+                    "awingtestpilot"
+                ],
+                "missile": [
+                    "protonrockets"
+                ],
+                "ept": [
+                    "rage",
+                    "pushthelimit"
+                ],
+                "mod": [
+                    "autothrusters"
+                ]
+            }
+        },
+        {
+            "name": "talasquadronpilot",
+            "ship": "z95headhunter",
+            "points": 18,
+            "upgrades": {
+                "missile": [
+                    "homingmissiles"
+                ],
+                "mod": [
+                    "guidancechips"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 496195,
+            "link": "http://xwing-builder.co.uk/view/496195/shake-n-vac",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}

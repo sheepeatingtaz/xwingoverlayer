@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Create Match{% endblock %}
+{% block js %}
+    <script src="{% static "bower_components/bootstrap-combobox/js/bootstrap-combobox.js" %}"></script>
+    <script src="{% static "js/site/typeahead.js" %}"></script>
+{% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "bower_components/bootstrap-combobox/css/bootstrap-combobox.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+    <h1>Create A New Match</h1>
+    {% crispy form %}
+    </div>
+{% endblock %}

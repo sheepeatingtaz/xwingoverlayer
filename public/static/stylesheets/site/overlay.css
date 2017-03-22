@@ -55,3 +55,7 @@
 .marquee {
   overflow: hidden;
 }
+
+.disabled {
+    color: dimgray;
+}

@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from django.urls import reverse_lazy
 
 from xwing_data.models import Pilot, Upgrade, StatisticSet
 
@@ -22,7 +24,15 @@ class MatchPilot(models.Model):
         )
 
     def upgrade_list(self):
-        return " &bull; ".join(self.upgrades.values_list('upgrade__name', flat=True))
+        upgrades = []
+        for upgrade in self.upgrades.all():
+            upgrades.append(
+                "<span{}>{}</span>".format(
+                    "" if upgrade.active else " class='disabled'",
+                    upgrade.upgrade.name
+                )
+            )
+        return " &bull; ".join(upgrades)
 
     pilot = models.ForeignKey(Pilot)
     points = models.IntegerField(default=0)
@@ -49,6 +59,12 @@ class Match(models.Model):
             self.squad_one,
             self.squad_two
         )
+
+    def get_absolute_url(self):
+        return reverse_lazy('matches:control', kwargs={'pk': self.id})
+
+    def get_overlay_url(self):
+        return reverse_lazy('matches:overlay', kwargs={'pk': self.id})
 
     squad_one = models.ForeignKey(Squad, related_name="list_one")
     squad_two = models.ForeignKey(Squad, related_name="list_two")

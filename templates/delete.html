@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Delete All Match & Squad Data {% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+    <h1>Are You Sure?</h1>
+    <p>You are about to delete all Squad &amp; Match Data.</p>
+    {% crispy form %}
+    </div>
+{% endblock %}

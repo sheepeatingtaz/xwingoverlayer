@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Home{% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Available Actions
+                    <small>What do you want to do today?</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-upload fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Upload XWS File</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url "squad:import" %}">
+                        <div class="panel-footer">
+{#                            <span class="pull-left">View Details</span>#}
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-plus fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Create Match</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url "matches:create" %}">
+                        <div class="panel-footer">
+{#                            <span class="pull-left">View Details</span>#}
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-list fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>List Matches</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url "matches:list" %}">
+                        <div class="panel-footer">
+{#                            <span class="pull-left">View Details</span>#}
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-trash fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div>Clear All Data</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url "delete" %}">
+                        <div class="panel-footer">
+{#                            <span class="pull-left">View Details</span>#}
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+
+
+{#        <hr>#}
+{##}
+{#        <!-- Footer -->#}
+{#        <footer>#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12">#}
+{#                    <p>Copyright &copy; Stephen Garton 2017</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- /.row -->#}
+{#        </footer>#}
+
+    </div>
+    <!-- /.container -->
+{% endblock %}

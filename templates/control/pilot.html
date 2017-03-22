@@ -17,7 +17,7 @@
                     {{ upgrade }}
                 </label>
                 <div class="col-xs-6">
-                    <input type="checkbox" name="upgrade-{{ upgrade.id }}" class="form-control upgrade-control" id="upgrade-{{ upgrade.id }}"
+                    <input type="checkbox" name="upgrade-{{ upgrade.id }}-{{ pilot.id }}" class="form-control upgrade-control" id="upgrade-{{ upgrade.id }}-{{ pilot.id }}"
                            value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}>
                 </div>
             </div>

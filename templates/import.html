@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Import Squadron from XWS URL{% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Import a Squad from an XWS File.</h1>
+        {% crispy form %}
+
+    </div>
+{% endblock %}

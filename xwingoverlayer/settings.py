@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'djangobower',
     'channels',
+    'crispy_forms',
+    'bootstrap4_datetime',
 
     'xwing_data',
     'matches',
@@ -126,6 +128,10 @@ BOWER_INSTALLED_APPS = (
     'xwing-data',
     'xwing-miniatures-font',
     'bootstrap',
+    'jQuery.Marquee',
+    'components-font-awesome',
+    'bootstrap-combobox',
+    'eonasdan-bootstrap-datetimepicker',
 )
 
 # Static files (CSS, JavaScript, Images)
@@ -158,3 +164,5 @@ CHANNEL_LAYERS = {
         "ROUTING": "xwingoverlayer.routing.channel_routing",
     },
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

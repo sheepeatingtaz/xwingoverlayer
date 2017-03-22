@@ -8,11 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="robots" content="noindex">
-    <title>{{ match }}</title>
+    <title>XWO::{% block title %}{{ match }}{% endblock %}</title>
     <!-- Bootstrap Core CSS -->
     <link href="{% static "bower_components/xwing-miniatures-font/dist/xwing-miniatures.css" %}" rel="stylesheet"
           type="text/css">
     <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "bower_components/components-font-awesome/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
 
     {% block css %}{% endblock %}
 
@@ -20,8 +21,7 @@
     <script src="{% static "bower_components/jquery/dist/jquery.js" %}"></script>
     <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
     <script src="{% static "js/site/reconnecting-websockets.js" %}"></script>
-
-    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js'></script>
+    <script src="{% static "bower_components/jquery.marquee/jquery.marquee.js" %}"></script>
 
     {% block js %}{% endblock %}
 

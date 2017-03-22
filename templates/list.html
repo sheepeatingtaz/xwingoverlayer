@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Matches{% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+ {% include 'navbar.html' %}
+    <div class="container">
+    <h1>
+        Available Matches
+        <a class="btn btn-primary btn-sm pull-right" href="{% url 'matches:create' %}"><i class="fa fa-plus fa-fw"></i>
+                Add New</a>
+    </h1>
+
+{% if matches.count %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Match</th>
+                    <th>Start Time</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for match in matches %}
+                  <tr>
+                    <td>{{ match }}</td>
+                    <td>{{ match.start_time|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{% url 'matches:overlay' match.id %}">Overlay</a>
+                        <a class="btn btn-primary btn-sm" href="{% url 'matches:control' match.id %}">Control</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+
+{% elif 'push-forward' in removal_types %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger" role="alert">There are no matches!</div>
+        </div>
+    </div>
+{% endif %}
+
+
+{% endblock %}

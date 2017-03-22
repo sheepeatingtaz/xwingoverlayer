@@ -14,7 +14,7 @@
         {% endfor %}
     </div>
     <div class="upgrades">
-        <div class="marquee">
+        <div class="marquee" id="upgrades-{{ pilot.id }}">
             {{ pilot.upgrade_list|safe }}
         </div>
     </div>

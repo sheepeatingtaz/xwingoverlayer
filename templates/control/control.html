@@ -8,7 +8,11 @@
     <script src="{% static "js/site/channels.js" %}"></script>
     <script src="{% static "js/site/control.js" %}"></script>
 {% endblock %}
+{% block css %}
+    <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
 {% block content %}
+{% include 'navbar.html' %}
     <div class="container">
         <div class="row">
             <div class="player panel panel-info" id="player_one">

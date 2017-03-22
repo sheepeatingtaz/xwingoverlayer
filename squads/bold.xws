@@ -1,0 +1,56 @@
+{
+    "version": "0.3.0",
+    "name": "The Bold & The Beautiful",
+    "faction": "imperial",
+    "points": 99,
+    "pilots": [
+        {
+            "name": "whisper",
+            "ship": "tiephantom",
+            "points": 42,
+            "upgrades": {
+                "crew": [
+                    "marajade"
+                ],
+                "system": [
+                    "firecontrolsystem"
+                ],
+                "ept": [
+                    "veteraninstincts"
+                ],
+                "mod": [
+                    "advancedcloakingdevice"
+                ]
+            }
+        },
+        {
+            "name": "captainoicunn",
+            "ship": "vt49decimator",
+            "points": 57,
+            "upgrades": {
+                "ept": [
+                    "wingman"
+                ],
+                "crew": [
+                    "gunner",
+                    "intelligenceagent",
+                    "ysanneisard"
+                ],
+                "torpedo": [
+                    "extramunitions"
+                ],
+                "mod": [
+                    "tacticaljammer"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 496190,
+            "link": "http://xwing-builder.co.uk/view/496190/the-bold-the-beautiful",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}

@@ -21,9 +21,10 @@ def ws_receive(message):
 
     if data.get("type") == "upgrade":
         upgrade = MatchUpgrade.objects.get(pk=data.get('id'))
+        pilot = MatchPilot.objects.get(pk=data.get('pilot_id'))
         upgrade.active = bool(data.get('value'))
         upgrade.save()
-        # data['upgrades'] =
+        data['upgrades'] = pilot.upgrade_list()
 
     if data.get("type") == "stat":
         pilot = MatchPilot.objects.get(pk=data.get('id'))

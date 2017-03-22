@@ -1,8 +1,16 @@
 from celery import shared_task
 from django.contrib.contenttypes.models import ContentType
 
-from matches.models import Squad, MatchPilot, MatchUpgrade
+from matches.models import Squad, MatchPilot, MatchUpgrade, Match
 from xwing_data.models import Pilot, Upgrade, StatisticSet
+
+
+@shared_task(bind=True, max_retries=3)
+def delete_all_data(self):
+    Squad.objects.all().delete()
+    MatchPilot.objects.all().delete()
+    MatchUpgrade.objects.all().delete()
+    Match.objects.all().delete
 
 
 @shared_task(bind=True, max_retries=3)
@@ -24,8 +32,8 @@ def import_squad(self, xws, player_name):
         target.skill = pilot_data.skill
 
         stats = StatisticSet(
-            skill = target.skill,
-            attack = target.attack,
+            skill=target.skill,
+            attack=target.attack,
             agility=target.agility,
             hull=target.hull,
             shields=target.shields
@@ -39,7 +47,7 @@ def import_squad(self, xws, player_name):
             stats=stats,
         )
         match_pilot.save()
-        if pilot.get('upgrades',[]):
+        if pilot.get('upgrades', []):
             for upgrade_type, upgrades in pilot['upgrades'].items():
                 for upgrade in upgrades:
                     upgrade_object = Upgrade.objects.get(xws=upgrade)
@@ -52,10 +60,12 @@ def import_squad(self, xws, player_name):
                                 setattr(
                                     match_pilot.stats,
                                     field,
-                                    getattr(grant.content_object,field, 0) + getattr(match_pilot.stats, field, 0)
+                                    getattr(grant.content_object, field, 0) + getattr(match_pilot.stats, field, 0)
                                 )
                             match_pilot.stats.save()
 
         squad.pilots.add(match_pilot)
+
+    return squad.id
 
     # TODO, add extra fields, like link etc?
