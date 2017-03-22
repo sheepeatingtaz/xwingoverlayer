@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'djangobower',
+    'channels',
 
     'xwing_data',
     'matches',
@@ -149,3 +150,13 @@ XWING_DATA = os.path.join(
                 'bower_components',
                 'xwing-data',
             )
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+        "ROUTING": "xwingoverlayer.routing.channel_routing",
+    },
+}
