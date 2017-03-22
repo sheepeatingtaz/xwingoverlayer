@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<div class="pilot panel col-lg-4">
+    <div class="pilot_details panel-heading">
+    <span class="ship-icon">
+        <i class="xwing-miniatures-ship xwing-miniatures-ship-{{ pilot.pilot.ship.xws }}"></i>
+    </span>&nbsp;
+        <span class="name">{{ pilot.pilot.name }}</span>&nbsp;
+        <span class="points">{{ pilot.points }}</span>
+
+    </div>
+<div class="panel-body">
+    <form class="form-horizontal" id="pilot-{{ pilot.id }}">
+    <div class="upgrades">
+        {% for upgrade in pilot.upgrades.all %}
+           <div class="form-group skill">
+                <label for="upgrade-{{ upgrade.id }}" class="control-label col-xs-6">
+                    {{ upgrade }}
+                </label>
+                <div class="col-xs-6">
+                    <input type="checkbox" name="upgrade-{{ upgrade.id }}" class="form-control upgrade-control" id="upgrade-{{ upgrade.id }}"
+                           value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="stats">
+
+            <div class="form-group skill">
+                <label for="skill-{{ pilot.id }}" class="control-label col-xs-6">Pilot Skill</label>
+                <div class="col-xs-6">
+                    <input type="text" name="skill-{{ pilot.id }}" class="form-control stat-control" id="skill-{{ pilot.id }}"
+                           value="{{ pilot.stats.skill }}">
+                </div>
+            </div>
+        <div class="form-group attack">
+                <label for="attack-{{ pilot.id }}" class="control-label col-xs-6"><i
+                class="xwing-miniatures-font xwing-miniatures-font-attack"></i>&nbsp;Attack</label>
+                <div class="col-xs-6">
+                    <input type="text" name="attack-{{ pilot.id }}" class="form-control stat-control" id="attack-{{ pilot.id }}"
+                           value="{{ pilot.stats.attack }}">
+                </div>
+            </div>
+        <div class="form-group agility">
+                <label for="agility-{{ pilot.id }}" class="control-label col-xs-6"><i
+                class="xwing-miniatures-font xwing-miniatures-font-agility"></i>&nbsp;Agility</label>
+                <div class="col-xs-6">
+                    <input type="text" name="agility-{{ pilot.id }}" class="form-control stat-control" id="agilityl-{{ pilot.id }}"
+                           value="{{ pilot.stats.agility }}">
+                </div>
+            </div>
+        <div class="form-group hull">
+                <label for="hull-{{ pilot.id }}" class="control-label col-xs-6"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>&nbsp;Hull</label>
+                <div class="col-xs-6">
+                    <input type="text" name="hull-{{ pilot.id }}" class="form-control stat-control" id="hull-{{ pilot.id }}"
+                           value="{{ pilot.stats.hull }}">
+                </div>
+            </div>
+        <div class="form-group shields">
+                <label for="shields-{{ pilot.id }}" class="control-label col-xs-6"><i
+                class="xwing-miniatures-font xwing-miniatures-font-shield"></i>&nbsp;Shields</label>
+                <div class="col-xs-6">
+                    <input type="text" name="sheilds-{{ pilot.id }}" class="form-control stat-control" id="sheilds-{{ pilot.id }}"
+                           value="{{ pilot.stats.shields }}">
+                </div>
+            </div>
+
+    </div>
+    </form>
+</div>
+</div>

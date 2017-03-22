@@ -1,0 +1,10 @@
+$(document).ready(function(){
+      $('.upgrade-control').click(function(){
+         console.log($(this).attr("id"));
+         console.log($(this).is(":checked"));
+      });
+      $('.stat-control').change(function(){
+         console.log($(this).attr('id'));
+         console.log($(this).val());
+      });
+});

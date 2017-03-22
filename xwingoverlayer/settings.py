@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -25,7 +24,9 @@ SECRET_KEY = '-+^bcrmr064-(*d60&h_^z!!k_z!k=%8m4ym98yhn+2@u)d^hn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['5b782306.ngrok.io', 'localhost']
+
+# INTERNAL_IPS = ['127.0.0.1']
 
 PROJECT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), ".."),
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
 
     'djangobower',
     'channels',
+    'debug_toolbar',
+    'channels_panel',
 
     'xwing_data',
     'matches',
@@ -56,6 +59,23 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.versions.VersionsPanel',
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.settings.SettingsPanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
+    'debug_toolbar.panels.logging.LoggingPanel',
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+    'channels_panel.panel.ChannelsDebugPanel',
 ]
 
 ROOT_URLCONF = 'xwingoverlayer.urls'
@@ -79,7 +99,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'xwingoverlayer.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -89,7 +108,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'xwingoverlayer.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -108,7 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -146,10 +163,10 @@ STATICFILES_FINDERS = (
 )
 
 XWING_DATA = os.path.join(
-            BOWER_COMPONENTS_ROOT,
-                'bower_components',
-                'xwing-data',
-            )
+    BOWER_COMPONENTS_ROOT,
+    'bower_components',
+    'xwing-data',
+)
 
 CHANNEL_LAYERS = {
     "default": {

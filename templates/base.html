@@ -10,7 +10,6 @@
     <meta name="robots" content="noindex">
     <title>{{ match }}</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "stylesheets/site/site.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "bower_components/xwing-miniatures-font/dist/xwing-miniatures.css" %}" rel="stylesheet"
           type="text/css">
     <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.css" %}" rel="stylesheet" type="text/css">
@@ -20,7 +19,8 @@
     <!-- Our js -->
     <script src="{% static "bower_components/jquery/dist/jquery.js" %}"></script>
     <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
-    <script src="{% static "js/site/site.js" %}"></script>
+    <script src="{% static "js/site/reconnecting-websockets.js" %}"></script>
+
     <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js'></script>
 
     {% block js %}{% endblock %}

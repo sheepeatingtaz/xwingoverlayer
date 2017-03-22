@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block js %}
+    <script src="{% static "js/site/control.js" %}"></script>
+    {% include 'channels.html' %}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="player panel panel-info" id="player_one">
+                {% include 'control/player.html' with player=match.squad_one %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="player panel panel-warning" id="player_two">
+                {% include 'control/player.html' with player=match.squad_two %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

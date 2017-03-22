@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<div class="panel-heading">
+<div class="player_name">
+    {{ player.player_name }}
+</div>
+<div class="list_name">
+    {{ player.list_name }}
+</div>
+</div>
+<div class="panel-body">
+{% for pilot in player.pilots.all %}
+    {% include 'control/pilot.html' with pilot=pilot %}
+{% endfor %}
+</div>
