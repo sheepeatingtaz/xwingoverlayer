@@ -11,3 +11,7 @@ class MatchView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['match'] = get_object_or_404(Match, pk=kwargs.get('pk'))
         return context
+
+
+class ControlView(MatchView):
+    template_name = 'control/control.html'

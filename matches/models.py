@@ -6,12 +6,12 @@ from xwing_data.models import Pilot, Upgrade, StatisticSet
 class MatchUpgrade(models.Model):
     def __str__(self):
         description = self.upgrade.__str__()
-        if self.removed:
-            description += " (removed)"
+        # if not self.active:
+        #     description += " (removed)"
         return description
 
     upgrade = models.ForeignKey(Upgrade)
-    removed = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
 
 
 class MatchPilot(models.Model):
