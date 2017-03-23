@@ -12,6 +12,19 @@ Uses lots of good stuff made by other people: please see point 1 in ToDo for why
 
 Feedback & Contributions welcome!
 
+Now with WorksForMe™ vagrant-y goodness:
+
+```bash
+git clone https://github.com/sheepeatingtaz/xwingoverlayer.git
+cd xwingoverlayer
+vagrant up
+```
+
+Open a browser and got to http://localhost:8008 and you're in!
+
+{more usage instructions to follow}
+
+
 ### ToDo:
 1. write a better readme
 2. make Control page nicer
@@ -19,7 +32,7 @@ Feedback & Contributions welcome!
 4. match timer displayed on overlay
 5. Add Damage Deck, Pilot & Upgrade card "viewer" to the overlay & control
 6. Hide upgrade icons? Not really relevant, but look nice.
-7. Vagrant Setup for instadeploy
+7. ~~Vagrant Setup for instadeploy~~
 8. Heroku Deployment for instadeploy
 9. Write some tests & get something to automatically build 
 

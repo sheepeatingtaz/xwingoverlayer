@@ -14,11 +14,11 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="player pull-left" id="player_one">
+        <div class="player playerone" id="player_one">
             {% include 'player.html' with player=match.squad_one %}
         </div>
 
-        <div class="player pull-right" id="player_two">
+        <div class="player playertwo" id="player_two">
             {% include 'player.html' with player=match.squad_two %}
         </div>
     </div>

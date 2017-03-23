@@ -5,7 +5,8 @@
 <div class="list_name">
     {{ player.list_name }}
 </div>
-
+<hr/>
 {% for pilot in player.pilots.all %}
     {% include 'pilot.html' with pilot=pilot %}
+    <hr/>
 {% endfor %}

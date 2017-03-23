@@ -15,18 +15,40 @@
 
 .player {
     background: black;
-    height: 100vh;
-    width: 15%;
     padding: 15px;
+    height: 100vh;
+    width:25vw;
 }
+
+.playerone {
+    float: left;
+    -webkit-shape-outside: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    shape-outside: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    -webkit-shape-margin: 20px;
+}
+
+.playertwo {
+    float: right;
+    text-align: right;
+    -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+    -webkit-shape-margin: 20px;
+}
+
+
+
 .player_name, .list_name {
     font-family: Bank;
     color: white;
+    font-size: 24px;
 }
 
 .pilot {
     color: white;
     font-family: Kimberley;
+    font-size: 18px;
 }
 
 #testing {
