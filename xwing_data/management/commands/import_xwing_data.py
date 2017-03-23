@@ -4,7 +4,7 @@ from xwing_data.tasks import FUNCTIONS, import_data
 
 
 class Command(BaseCommand):
-    help = "Update users password"
+    help = "Updates X-wing Data sources"
 
     def __init__(self):
         super(Command, self).__init__()

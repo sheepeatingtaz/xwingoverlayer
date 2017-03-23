@@ -8,5 +8,5 @@ workon xwing
 
 python manage.py migrate
 python manage.py bower install
-python manage.py collectstatic
-python manage.py load_xwing_data
+python manage.py collectstatic --noinput
+python manage.py import_xwing_data

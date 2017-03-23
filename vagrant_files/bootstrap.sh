@@ -8,8 +8,10 @@ apt-get install -q -y --force-yes python3-dev freetds-dev python-imaging libjpeg
 apt-get install -q -y --force-yes libfreetype6-dev python-pip libxml2-dev libxmlsec1-dev libxslt1-dev zlib1g-dev
 apt-get install -q -y --force-yes redis-server redis-tools npm
 #apt-get upgrade -y
-
+ln -s /usr/bin/nodejs /usr/bin/node
 pip install virtualenvwrapper
+npm install -g bower
+
 
 mkdir /var/log/xwing
 chown -R vagrant:vagrant /var/log/xwing
