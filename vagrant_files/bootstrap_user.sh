@@ -8,6 +8,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv xwing -p $(which python3)
 workon xwing
 cd /vagrant
+pip install --upgrade pip
 pip install -r requirements.txt
 echo "xwing virtualenv created, make sure you install requirements"
 byobu-enable
