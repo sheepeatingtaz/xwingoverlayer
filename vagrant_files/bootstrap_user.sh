@@ -11,3 +11,8 @@ cd /vagrant
 pip install -r requirements.txt
 echo "xwing virtualenv created, make sure you install requirements"
 byobu-enable
+
+sudo service supervisor restart
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl restart all

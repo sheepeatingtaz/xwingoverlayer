@@ -13,4 +13,6 @@ Vagrant.configure("2") do |config|
     config.vm.network "public_network"
     config.vm.network :forwarded_port, guest: 6379, host: 6379 # redis
     config.vm.network :forwarded_port, guest: 8008, host: 8008 # system
+    config.vm.provision :shell, path: "vagrant_files/initialise_data.sh", privileged: false
+    config.vm.provision :shell, run: "always", :inline => "sudo service supervisor restart"
 end

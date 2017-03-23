@@ -1,4 +1,6 @@
 import json
+from collections import OrderedDict
+
 import os
 
 from celery import shared_task
@@ -54,6 +56,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
             pilot=pilot
         )
         slot.save()
+    return True
 
 
 @shared_task(bind=True, max_retries=3)
@@ -83,6 +86,8 @@ def process_ship_data(self, ship_entry, delay=True):
     for action_name in ship_entry['actions']:
         action, created = Action.objects.update_or_create(name=action_name, defaults={})
         ship.actions.add(action)
+
+    return True
 
 
 @shared_task(bind=True, max_retries=3)
@@ -139,7 +144,6 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
         upgrade.size.add(base)
 
     for grant in upgrade_entry.get('grants', []):
-        print(grant)
         if grant['type'] == "stats":
             object = StatisticSet(
                 skill=0,
@@ -162,14 +166,12 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
         )
         grant_object.save()
         upgrade.grants.add(grant_object)
+    return True
 
 
-
-FUNCTIONS = {
-    'ships': process_ship_data,
-    'pilots': process_pilot_data,
-    'upgrades': process_upgrade_data,
-}
+FUNCTIONS = OrderedDict(
+    [('ships', process_ship_data), ('pilots', process_pilot_data), ('upgrades', process_upgrade_data)]
+)
 
 
 @shared_task(bind=True, max_retries=3)
@@ -177,5 +179,9 @@ def import_data(self, source, delay=True):
     with open(os.path.join(settings.XWING_DATA, 'data', '{}.js'.format(source)), encoding='utf8') as raw_data:
         data = json.load(raw_data)
 
+    count = 0
     for entry in data:
-        FUNCTIONS[source](entry) if not delay else FUNCTIONS[source](entry)
+        result = FUNCTIONS[source](entry) if not delay else FUNCTIONS[source](entry)
+        if result:
+            count += 1
+    return count
