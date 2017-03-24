@@ -14,6 +14,7 @@ from xwing_data.models import Ship, Faction, StatisticSet, BaseSize, Action, Pil
 def process_pilot_data(self, pilot_entry, delay=True):
     ship = Ship.objects.get(name=pilot_entry['ship'])
     if not ship:
+        print("MISSING SHIP: {}".format(pilot_entry['ship']))
         process_pilot_data.delay(pilot_entry)
         return False
 
@@ -56,6 +57,8 @@ def process_pilot_data(self, pilot_entry, delay=True):
             pilot=pilot
         )
         slot.save()
+
+    print("Added {} ({}) to system".format(pilot.name, pilot.faction))
     return True
 
 
@@ -87,6 +90,7 @@ def process_ship_data(self, ship_entry, delay=True):
         action, created = Action.objects.update_or_create(name=action_name, defaults={})
         ship.actions.add(action)
 
+    print("Added {} to system".format(ship.name))
     return True
 
 
@@ -96,6 +100,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
     for ship in upgrade_entry.get('ship', []):
         ship_object = Ship.objects.get(name=ship)
         if not ship_object:
+            print("MISSING SHIP: {}".format(ship))
             process_upgrade_data.delay(upgrade_entry)
             return False
         ships.append(ship_object)
@@ -104,6 +109,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
     for size in upgrade_entry.get('size', []):
         base = BaseSize.objects.get(name=size)
         if not base:
+            print("MISSING BASE SIZE: {}".format(size))
             process_upgrade_data.delay(upgrade_entry)
             return False
         bases.append(base)
@@ -155,9 +161,14 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
             setattr(object, grant['name'], grant['value'])
             object.save()
         if grant['type'] == "action":
-            object = Action.objects.get(name=grant['name'])
+            object, created = Action.objects.update_or_create(
+                name=grant['name'], defaults={}
+            )
         if grant['type'] == "slot":
-            object = SlotType.objects.get(name=grant['name'])
+            object, created = SlotType.objects.update_or_create(
+                name=grant['name'],
+                defaults={},
+            )
 
         related_object_type = ContentType.objects.get_for_model(object)
         grant_object = Grant(
@@ -166,6 +177,8 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
         )
         grant_object.save()
         upgrade.grants.add(grant_object)
+
+    print("Added {} {} to system".format(upgrade.slot, upgrade.name))
     return True
 
 

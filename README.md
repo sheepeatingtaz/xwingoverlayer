@@ -29,7 +29,7 @@ Open a browser and got to http://localhost:8008 and you're in!
 1. write a better readme
 2. make Control page nicer
 3. when ship hull == 0, grey out all fields
-4. match timer displayed on overlay
+4. ~~match timer displayed on overlay~~
 5. Add Damage Deck, Pilot & Upgrade card "viewer" to the overlay & control
 6. Hide upgrade icons? Not really relevant, but look nice.
 7. ~~Vagrant Setup for instadeploy~~
@@ -53,4 +53,6 @@ Open a browser and got to http://localhost:8008 and you're in!
 ![Control Page](screenshots/control.png?raw=true "Control Page")
 
 #### Overlay Page
+![Overlay Page](screenshots/overlay2.png?raw=true "Overlay Page")
+
 ![Overlay Page](screenshots/overlay.png?raw=true "Overlay Page")

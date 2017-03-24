@@ -1,0 +1,61 @@
+{
+  "description": "",
+  "faction": "scum",
+  "name": "Scum Example",
+  "pilots": [
+    {
+      "name": "ketsuonyo",
+      "points": 41,
+      "ship": "lancerclasspursuitcraft",
+      "upgrades": {
+        "ept": [
+          "veteraninstincts"
+        ],
+        "illicit": [
+          "deadmansswitch"
+        ]
+      }
+    },
+    {
+      "name": "spicerunner",
+      "points": 27,
+      "ship": "hwk290",
+      "upgrades": {
+        "turret": [
+          "twinlaserturret"
+        ],
+        "crew": [
+          "inspiringrecruit"
+        ],
+        "mod": [
+          "munitionsfailsafe"
+        ],
+        "title": [
+          "moldycrow"
+        ]
+      }
+    },
+    {
+      "name": "talonbanecobra",
+      "points": 32,
+      "ship": "kihraxzfighter",
+      "upgrades": {
+        "ept": [
+          "veteraninstincts"
+        ],
+        "mod": [
+          "stealthdevice"
+        ]
+      }
+    }
+  ],
+  "points": 100,
+  "vendor": {
+    "yasb": {
+      "builder": "(Yet Another) X-Wing Miniatures Squad Builder",
+      "builder_url": "https://geordanr.github.io/xwing/",
+      "link": "https://geordanr.github.io/xwing/?f=Scum%20and%20Villainy&d=v4!s!218:27,-1,111,-1:-1:-1:;127:135,218,-1:3:7:;135:27,-1,-1:-1:1:&sn=Unnamed%20Squadron"
+    }
+  },
+  "version": "0.3.0"
+}

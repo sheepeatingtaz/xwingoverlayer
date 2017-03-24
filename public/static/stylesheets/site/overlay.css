@@ -17,7 +17,7 @@
     background: black;
     padding: 15px;
     height: 100vh;
-    width:25vw;
+    width: 25vw;
 }
 
 .playerone {
@@ -37,8 +37,6 @@
     -webkit-shape-margin: 20px;
 }
 
-
-
 .player_name, .list_name {
     font-family: Bank;
     color: white;
@@ -54,6 +52,7 @@
 #testing {
     color: white;
 }
+
 .skill {
     color: #f57f20;
 }
@@ -75,9 +74,60 @@
 }
 
 .marquee {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .disabled {
     color: dimgray;
+}
+
+.rebel-alliance-gradient, resistance-gradient {
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#640000, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#640000, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#640000, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#640000, black); /* Standard syntax (must be last) */
+}
+
+.scum-and-villainy-gradient {
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#646400, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#646400, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#646400, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#646400, black); /* Standard syntax (must be last) */
+}
+
+.galactic-empire-gradient, first-order-gradient {
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#006400, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#006400, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#006400, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#006400, black); /* Standard syntax (must be last) */
+}
+
+.timer-container {
+    position: absolute;
+    width: 100%;
+    z-index: 15;
+    bottom: 0;
+    right: 25%;
+    left: 50%;
+    margin-left: -50%;
+    text-align: center;
+    font-family: Bank;
+
+}
+
+#timer {
+    padding: 10px 16px;
+    font-size: 40px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: white;
+    background-color: black;
+    border-color: #d43f3a;
+}
+
+.shrunken {
+    font-size: 30px !important;
 }

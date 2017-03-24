@@ -8,6 +8,14 @@ from django.views.generic import TemplateView
 from matches.forms import BuildMatch
 from matches.models import Match
 
+FACTION_MAP = {
+    "Galactic Empire": "empire",
+    "First Order": "firstorder",
+    "Rebel Alliance": "rebel",
+    "Resistance": "rebel",
+    "Scum and Villainy": "scum",
+
+}
 
 class CreateMatchView(CreateView):
     template_name = 'create_match.html'
@@ -32,6 +40,8 @@ class MatchView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['match'] = get_object_or_404(Match, pk=kwargs.get('pk'))
+        context['faction_one'] = FACTION_MAP[context['match'].squad_one.pilots.first().pilot.faction.name]
+        context['faction_two'] = FACTION_MAP[context['match'].squad_two.pilots.first().pilot.faction.name]
         return context
 
 

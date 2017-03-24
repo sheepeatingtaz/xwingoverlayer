@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install -q -y --force-yes python3 python git python-pip pkg-config redis-server redis-tools npm
-apt-get install -q -y --force-yes python-dev supervisor build-essential python3-dev python-pip
+apt-get dist-upgrade # In case the box is old.
+apt-get install -q -y --force-yes python3 python git python-pip pkg-config redis-server redis-tools npm python-dev supervisor build-essential python3-dev python-pip multitail dos2unix
 #apt-get upgrade -y
 ln -s /usr/bin/nodejs /usr/bin/node
 pip install virtualenvwrapper

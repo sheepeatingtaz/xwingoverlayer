@@ -3,9 +3,13 @@
 {% block js %}
     <script type='text/javascript'>
     var match_id = {{ match.id }};
+    var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
+    var player_1_icon = "{{ faction_one }}";
+    var player_2_icon = "{{ faction_two }}"
     </script>
 
     <script src="{% static "js/site/channels.js" %}"></script>
+    <script src="{% static "bower_components/jquery.countdown/dist/jquery.countdown.js" %}"></script>
     <script src="{% static "js/site/match.js" %}"></script>
 {% endblock %}
 {% block css %}
@@ -14,12 +18,16 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="player playerone" id="player_one">
+        <div class="player playerone {{ match.squad_one.pilots.first.pilot.faction|slugify }}-gradient" id="player_one">
             {% include 'player.html' with player=match.squad_one %}
         </div>
 
-        <div class="player playertwo" id="player_two">
+        <div class="player playertwo {{ match.squad_two.pilots.first.pilot.faction|slugify }}-gradient" id="player_two">
             {% include 'player.html' with player=match.squad_two %}
         </div>
+        <div class="timer-container">
+            <div class="btn" id="timer"></div>
+        </div>
     </div>
+<i class="shrunken xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
 {% endblock %}

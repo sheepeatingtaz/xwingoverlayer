@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -59,6 +61,9 @@ class Match(models.Model):
             self.squad_one,
             self.squad_two
         )
+
+    def end_time(self):
+        return self.start_time + datetime.timedelta(minutes=self.match_minutes)
 
     def get_absolute_url(self):
         return reverse_lazy('matches:control', kwargs={'pk': self.id})

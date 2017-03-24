@@ -10,8 +10,13 @@ class Command(BaseCommand):
         super(Command, self).__init__()
 
     def handle(self, username=None, *args, **options):
+        end_message = []
         for function_name, function in FUNCTIONS.items():
             print("Loading {}...".format(function_name))
             count = import_data(function_name, False)
-            print("{} {} loaded".format(count, function_name))
-        print("All Data Loaded.")
+            completed = "{} {} loaded".format(count, function_name)
+            print(completed)
+            end_message.append(completed)
+        print("All Data Loaded: ")
+        for msg in end_message:
+            print(msg)
