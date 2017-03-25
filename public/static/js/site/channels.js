@@ -4,7 +4,7 @@ $(function () {
     var ws_path = ws_scheme + '://' + window.location.host + "/match/" + match_id;
     var socket = new ReconnectingWebSocket(ws_path);
 
-    $('.upgrade-control').click(function () {
+    $('.upgrade-control').change(function () {
         var data = $(this).attr("id").replace(/upgrade-/gi, '').split("-");
         var message = {
             type: "upgrade",
@@ -15,13 +15,14 @@ $(function () {
         socket.send(JSON.stringify(message));
         return false;
     });
-    $('.stat-control').change(function () {
+    $('.stat-control').click(function () {
+
         var data = $(this).attr("id").split("-");
         var message = {
             type: "stat",
             field: data[0],
             id: data[1],
-            value: $(this).val()
+            value: $(this).attr("data-value")
         };
         socket.send(JSON.stringify(message));
     });
@@ -35,7 +36,9 @@ $(function () {
         }
         if (data.type == "stat") {
             $('#'+data.field+'-'+data.id).text(data.value);
-            $('#'+data.field+'-'+data.id).val(data.value);
+            $('#'+data.field+'-'+data.id+'-up').attr('data-value', parseInt(data.value)+1);
+            $('#'+data.field+'-'+data.id+'-down').attr('data-value', parseInt(data.value)-1);
+            // $('#'+data.field+'-'+data.id).val(data.value);
         }
     };
 
