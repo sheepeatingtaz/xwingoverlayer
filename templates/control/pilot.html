@@ -9,25 +9,29 @@
 
     </div>
     <div class="panel-body">
-        <form class="form-horizontal" id="pilot-{{ pilot.id }}">
-            <div class="stats row">
-                {% for stat_name, stat_value in pilot.stats.skill_dict.items %}
-                    {% include 'control/statcontrol.html' %}
-                {% endfor %}
+        <div class="stats row">
+            {% for stat_name, stat_value in pilot.stats.skill_dict.items %}
+                {% include 'control/statcontrol.html' %}
+            {% endfor %}
 
-            </div>
+        </div>
     </div>
     <div class="panel-footer">
         <div class="upgrades row">
             {% for upgrade in pilot.upgrades.all %}
-                <input type="checkbox" name="upgrade-{{ upgrade.id }}-{{ pilot.id }}"
-                       class="upgrade-control" id="upgrade-{{ upgrade.id }}-{{ pilot.id }}"
-                       value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}
-                       data-toggle="toggle" data-on="{{ upgrade }}" data-off="{{ upgrade }}"
-                >
+                <div class="col-lg-12">
+                    <input type="checkbox" name="upgrade-{{ upgrade.id }}-{{ pilot.id }}"
+                           class="upgrade-control" id="upgrade-{{ upgrade.id }}-{{ pilot.id }}"
+                           value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}
+                           data-toggle="toggle" data-on="Active" data-off="Removed" data-size="mini"
+                    >
+                    <label for="upgrade-{{ upgrade.id }}-{{ pilot.id }}"><a href="#"
+                                                                            id="upgrade-{{ upgrade.id }}-{{ pilot.id }}-show"
+                                                                            class="btn btn-mini">
+                        {{ upgrade }}</a></label>
+
+                </div>
             {% endfor %}
         </div>
-
-        </form>
     </div>
 </div>

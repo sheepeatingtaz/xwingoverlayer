@@ -20,6 +20,12 @@
     font-size: 18px;
 }
 
+.upgrades {
+    color: white;
+    font-family: Kimberley;
+    font-size: 14px;
+}
+
 .skill {
     color: #f57f20;
 }
@@ -190,5 +196,24 @@
 }
 .panel-scum-and-villainy > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #484800;
+}
+
+.panel-damage {
+  border-color: #8b4c00;
+}
+.panel-damage > .panel-heading {
+  color: #ffffff;
+  background-color: #8b4c00;
+  border-color: #8b4c00;
+}
+.panel-damage > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #8b4c00;
+}
+.panel-damage > .panel-heading .badge {
+  color: #8b4c00;
+  background-color: #ffffff;
+}
+.panel-damage > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #8b4c00;
 }
 
