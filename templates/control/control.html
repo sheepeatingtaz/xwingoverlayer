@@ -7,21 +7,26 @@
 
     <script src="{% static "js/site/channels.js" %}"></script>
     <script src="{% static "js/site/control.js" %}"></script>
+    <script src="{% static "bower_components/bootstrap-toggle/js/bootstrap-toggle.js" %}"></script>
 {% endblock %}
 {% block css %}
     <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "stylesheets/site/common.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "stylesheets/site/control.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "bower_components/bootstrap-toggle/css/bootstrap-toggle.css"%}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="player panel panel-info" id="player_one">
+            <div class="col-lg-4 panel panel-{{ match.squad_one.pilots.first.pilot.faction|slugify }}" id="player_one">
                 {% include 'control/player.html' with player=match.squad_one %}
             </div>
-        </div>
-        <div class="row">
-            <div class="player panel panel-warning" id="player_two">
+            <div class="col-md-4 panel panel-{{ match.squad_two.pilots.first.pilot.faction|slugify }}" id="player_two">
                 {% include 'control/player.html' with player=match.squad_two %}
+            </div>
+            <div class="col-md-4 panel panel-warning" id="damage">
+                {% include 'control/damage.html' %}
             </div>
         </div>
     </div>

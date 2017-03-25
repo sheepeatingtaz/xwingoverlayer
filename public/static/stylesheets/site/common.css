@@ -1,0 +1,194 @@
+@font-face {
+    font-family: Kimberley;
+    src: url("../../fonts/kimberley bl.ttf");
+}
+
+@font-face {
+    font-family: Bank;
+    src: url("../../fonts/Bank Gothic Medium BT.ttf");
+}
+
+.player_name, .list_name {
+    font-family: Bank;
+    color: white;
+    font-size: 24px;
+}
+
+.pilot {
+    color: white;
+    font-family: Kimberley;
+    font-size: 18px;
+}
+
+.skill {
+    color: #f57f20;
+}
+
+.attack {
+    color: #cd1b3d;
+}
+
+.agility {
+    color: #6dbe45;
+}
+
+.hull {
+    color: #eeea1e;
+}
+
+.shield {
+    color: #7fd5e7;
+}
+
+.btn-skill {
+    color: #ffffff;
+    background-color: #f57f20;
+    border-color: #f57f20;
+}
+
+.btn-skill:focus,
+.btn-skill.focus {
+    color: #ffffff;
+    background-color: #c3641a;
+    border-color: #af581a;
+}
+
+.btn-skill:hover {
+    color: #ffffff;
+    background-color: #c3641a;
+    border-color: #c3641a;
+}
+
+.btn-attack {
+    color: #ffffff;
+    background-color: #cd1b3d;
+    border-color: #cd1b3d;
+}
+
+.btn-attack:focus,
+.btn-attack.focus {
+    color: #ffffff;
+    background-color: #ab1734;
+    border-color: #93142e;
+}
+
+.btn-attack:hover {
+    color: #ffffff;
+    background-color: #ab1734;
+    border-color: #93142e;
+}
+
+.btn-agility {
+    color: #ffffff;
+    background-color: #6dbe45;
+    border-color: #6dbe45;
+}
+
+.btn-agility:focus,
+.btn-agility.focus {
+    color: #ffffff;
+    background-color: #519037;
+    border-color: #519037;
+}
+
+.btn-agility:hover {
+    color: #ffffff;
+    background-color: #519037;
+    border-color: #519037;
+}
+
+.btn-hull {
+    color: #ffffff;
+    background-color: #eeea1e;
+    border-color: #eeea1e;
+}
+
+.btn-hull:focus,
+.btn-hull.focus {
+    color: #ffffff;
+    background-color: #c9c519;
+    border-color: #c9c519;
+}
+
+.btn-hull:hover {
+    color: #ffffff;
+    background-color: #c9c519;
+    border-color: #c9c519;
+}
+
+.btn-shield {
+    color: #ffffff;
+    background-color: #7fd5e7;
+    border-color: #7fd5e7;
+}
+
+.btn-shield:focus,
+.btn-shield.focus {
+    color: #ffffff;
+    background-color: #6bb6c7;
+    border-color: #6bb6c7;
+}
+
+.btn-shield:hover {
+    color: #ffffff;
+    background-color: #6bb6c7;
+    border-color: #6bb6c7;
+}
+
+.panel-galactic-empire, .panel-first-order {
+  border-color: #004800;
+}
+.panel-galactic-empire > .panel-heading, .panel-first-order > .panel-heading {
+  color: #ffffff;
+  background-color: #004800;
+  border-color: #004800;
+}
+.panel-galactic-empire > .panel-heading + .panel-collapse > .panel-body, .panel-first-order > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #004800;
+}
+.panel-galactic-empire > .panel-heading .badge, .panel-first-order > .panel-heading .badge {
+  color: #004800;
+  background-color: #ffffff;
+}
+.panel-galactic-empire > .panel-footer + .panel-collapse > .panel-body, .panel-first-order > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #004800;
+}
+
+.panel-rebel-alliance, .panel-resistance {
+  border-color: #320000;
+}
+.panel-rebel-alliance > .panel-heading, .panel-resistance > .panel-heading {
+  color: #ffffff;
+  background-color: #320000;
+  border-color: #320000;
+}
+.panel-rebel-alliance > .panel-heading + .panel-collapse > .panel-body, .panel-resistance > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #320000;
+}
+.panel-rebel-alliance > .panel-heading .badge, .panel-resistance > .panel-heading .badge {
+  color: #320000;
+  background-color: #ffffff;
+}
+.panel-rebel-alliance > .panel-footer + .panel-collapse > .panel-body, .panel-resistance > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #320000;
+}
+
+.panel-scum-and-villainy {
+  border-color: #484800;
+}
+.panel-scum-and-villainy > .panel-heading {
+  color: #ffffff;
+  background-color: #484800;
+  border-color: #484800;
+}
+.panel-scum-and-villainy > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #484800;
+}
+.panel-scum-and-villainy > .panel-heading .badge {
+  color: #484800;
+  background-color: #ffffff;
+}
+.panel-scum-and-villainy > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #484800;
+}
+

@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -23,8 +25,27 @@ class XWSBase(Base):
 
 
 class Faction(Base):
-    pass
+    def icon(self):
+        FACTION_MAP = {
+            "Galactic Empire": "empire",
+            "First Order": "firstorder",
+            "Rebel Alliance": "rebel",
+            "Resistance": "rebel",
+            "Scum and Villainy": "scum",
 
+        }
+        return FACTION_MAP[self.name]
+
+    def pilot_icon(self):
+        FACTION_MAP = {
+            "Galactic Empire": "helmet-imperial",
+            "First Order": "helmet-imperial",
+            "Rebel Alliance": "helmet-rebel",
+            "Resistance": "helmet-rebel",
+            "Scum and Villainy": "helmet-scum",
+
+        }
+        return FACTION_MAP[self.name]
 
 class Action(Base):
     pass
@@ -45,14 +66,24 @@ class StatisticSet(models.Model):
             self.attack,
             self.agility,
             self.hull,
-            self.shields
+            self.shield
         )
 
-    skill=models.IntegerField(default=0)
+    def skill_dict(self):
+        d = OrderedDict()
+        d["skill"] = self.skill
+        d["attack"] = self.attack
+        d["agility"] = self.agility
+        d["hull"] = self.hull
+        d["shield"] = self.shield
+
+        return d
+
+    skill = models.IntegerField(default=0)
     attack = models.IntegerField()
     agility = models.IntegerField()
     hull = models.IntegerField()
-    shields = models.IntegerField()
+    shield = models.IntegerField()
 
 
 class Ship(XWSBase):
@@ -79,6 +110,7 @@ class Pilot(XWSBase):
 class Slot(models.Model):
     def __str__(self):
         return self.slot_type.__str__()
+
     slot_type = models.ForeignKey(SlotType)
     pilot = models.ForeignKey(Pilot)
 

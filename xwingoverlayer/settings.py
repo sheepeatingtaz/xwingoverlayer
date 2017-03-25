@@ -132,6 +132,8 @@ BOWER_INSTALLED_APPS = (
     'components-font-awesome',
     'bootstrap-combobox',
     'eonasdan-bootstrap-datetimepicker',
+    'bootstrap-toggle',
+    'jquery.countdown',
 )
 
 # Static files (CSS, JavaScript, Images)

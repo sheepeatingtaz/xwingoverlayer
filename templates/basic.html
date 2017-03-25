@@ -2,10 +2,10 @@
 {% load staticfiles %}
 {% block js %}
     <script type='text/javascript'>
-    var match_id = {{ match.id }};
-    var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
-    var player_1_icon = "{{ faction_one }}";
-    var player_2_icon = "{{ faction_two }}"
+        var match_id = {{ match.id }};
+        var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
+        var player_1_icon = "{{ faction_one }}";
+        var player_2_icon = "{{ faction_two }}"
     </script>
 
     <script src="{% static "js/site/channels.js" %}"></script>
@@ -14,7 +14,7 @@
 {% endblock %}
 {% block css %}
     <link href="{% static "stylesheets/site/overlay.css" %}" rel="stylesheet" type="text/css">
-
+    <link href="{% static "stylesheets/site/common.css" %}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block content %}
     <div class="row">
@@ -29,5 +29,5 @@
             <div class="btn" id="timer"></div>
         </div>
     </div>
-<i class="shrunken xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
+    <i class="shrunken xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
 {% endblock %}

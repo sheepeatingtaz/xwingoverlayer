@@ -1,13 +1,3 @@
-@font-face {
-    font-family: Kimberley;
-    src: url("../../fonts/kimberley bl.ttf");
-}
-
-@font-face {
-    font-family: Bank;
-    src: url("../../fonts/Bank Gothic Medium BT.ttf");
-}
-
 #wrapper {
     background: magenta;
     height: 100vh;
@@ -37,42 +27,6 @@
     -webkit-shape-margin: 20px;
 }
 
-.player_name, .list_name {
-    font-family: Bank;
-    color: white;
-    font-size: 24px;
-}
-
-.pilot {
-    color: white;
-    font-family: Kimberley;
-    font-size: 18px;
-}
-
-#testing {
-    color: white;
-}
-
-.skill {
-    color: #f57f20;
-}
-
-.attack {
-    color: #cd1b3d;
-}
-
-.agility {
-    color: #6dbe45;
-}
-
-.hull {
-    color: #eeea1e;
-}
-
-.shields {
-    color: #7fd5e7;
-}
-
 .marquee {
     overflow: hidden;
 }
@@ -83,26 +37,26 @@
 
 .rebel-alliance-gradient, resistance-gradient {
     background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#640000, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#640000, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#640000, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#640000, black); /* Standard syntax (must be last) */
+    background: -webkit-linear-gradient(#320000, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#320000, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#320000, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#320000, black); /* Standard syntax (must be last) */
 }
 
 .scum-and-villainy-gradient {
     background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#646400, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#646400, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#646400, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#646400, black); /* Standard syntax (must be last) */
+    background: -webkit-linear-gradient(#484800, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#484800, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#484800, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#484800, black); /* Standard syntax (must be last) */
 }
 
 .galactic-empire-gradient, first-order-gradient {
     background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#006400, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#006400, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#006400, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#006400, black); /* Standard syntax (must be last) */
+    background: -webkit-linear-gradient(#004800, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#004800, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#004800, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#004800, black); /* Standard syntax (must be last) */
 }
 
 .timer-container {
