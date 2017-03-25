@@ -8,3 +8,6 @@
     &nbsp;<span id="{{ stat_name }}-{{ pilot.id }}">{{ stat_value }}</span>
     <a data-value="{{ stat_value|add:-1 }}" class="btn btn-{{ stat_name }} pull-right stat-control" href="" id="{{ stat_name }}-{{ pilot.id }}-down"><i class="fa fa-caret-down"></i></a>
 </div>
+{% if stat_name == "skill" %}
+    <div class="col-md-6"><i class="xwing-miniatures-font"></i>&nbsp;</div>
+{% endif %}
