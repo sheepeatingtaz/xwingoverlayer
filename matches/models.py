@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.urls import reverse_lazy
 
 from xwing_data.models import Pilot, Upgrade, StatisticSet
+from django.utils import timezone
 
 
 class MatchUpgrade(models.Model):
@@ -63,7 +64,11 @@ class Match(models.Model):
         )
 
     def end_time(self):
-        return self.start_time + datetime.timedelta(minutes=self.match_minutes)
+        if self.start_time and self.match_minutes:
+            ts = self.start_time + datetime.timedelta(minutes=self.match_minutes)
+        else:
+            ts = timezone.now() + datetime.timedelta(minutes=self.match_minutes)
+        return ts
 
     def get_absolute_url(self):
         return reverse_lazy('matches:control', kwargs={'pk': self.id})
@@ -73,5 +78,5 @@ class Match(models.Model):
 
     squad_one = models.ForeignKey(Squad, related_name="list_one")
     squad_two = models.ForeignKey(Squad, related_name="list_two")
-    start_time = models.DateTimeField()
+    start_time = models.DateTimeField(blank=True, null=True)
     match_minutes = models.IntegerField(default=75)

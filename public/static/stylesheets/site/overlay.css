@@ -72,16 +72,3 @@
 
 }
 
-#timer {
-    padding: 10px 16px;
-    font-size: 40px;
-    line-height: 1.3333333;
-    border-radius: 6px;
-    color: white;
-    background-color: black;
-    border-color: #d43f3a;
-}
-
-.shrunken {
-    font-size: 30px !important;
-}

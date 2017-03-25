@@ -2,8 +2,9 @@ import json
 
 from channels import Group
 from channels.sessions import channel_session
+from django.utils import timezone
 
-from matches.models import MatchUpgrade, MatchPilot
+from matches.models import MatchUpgrade, MatchPilot, Match
 
 
 @channel_session
@@ -30,6 +31,12 @@ def ws_receive(message):
         pilot = MatchPilot.objects.get(pk=data.get('id'))
         setattr(pilot.stats, data.get('field'), data.get('value'))
         pilot.stats.save()
+
+    if data.get("type") == "start_clock":
+        match = Match.objects.get(pk=data.get('id'))
+        match.start_time = timezone.now()
+        match.save()
+        data['finish_time'] = match.end_time().strftime("%Y-%m-%d %H:%M")
 
     Group('match-{}'.format(match_id)).send({'text': json.dumps(data)})
 

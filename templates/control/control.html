@@ -2,9 +2,14 @@
 {% load staticfiles %}
 {% block js %}
     <script type='text/javascript'>
-    var match_id = {{ match.id }};
+        var match_id = {{ match.id }};
+        var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
+        var player_1_icon = "{{ faction_one }}";
+        var player_2_icon = "{{ faction_two }}"
     </script>
 
+
+    <script src="{% static "bower_components/jquery.countdown/dist/jquery.countdown.js" %}"></script>
     <script src="{% static "js/site/channels.js" %}"></script>
     <script src="{% static "js/site/control.js" %}"></script>
     <script src="{% static "bower_components/bootstrap-toggle/js/bootstrap-toggle.js" %}"></script>
@@ -13,10 +18,11 @@
     <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "stylesheets/site/common.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "stylesheets/site/control.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "bower_components/bootstrap-toggle/css/bootstrap-toggle.css"%}" rel="stylesheet" type="text/css">
+    <link href="{% static "bower_components/bootstrap-toggle/css/bootstrap-toggle.css" %}" rel="stylesheet"
+          type="text/css">
 {% endblock %}
 {% block content %}
-{% include 'navbar.html' %}
+    {% include 'navbar.html' %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 panel panel-{{ match.squad_one.pilots.first.pilot.faction|slugify }}" id="player_one">
@@ -24,6 +30,9 @@
             </div>
             <div class="col-md-4 panel panel-{{ match.squad_two.pilots.first.pilot.faction|slugify }}" id="player_two">
                 {% include 'control/player.html' with player=match.squad_two %}
+            </div>
+            <div class="col-md-4 panel panel-control" id="control">
+                {% include 'control/match_control.html' %}
             </div>
             <div class="col-md-4 panel panel-damage" id="damage">
                 {% include 'control/damage.html' %}

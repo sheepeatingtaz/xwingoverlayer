@@ -27,7 +27,7 @@ Open a browser and got to http://localhost:8008 and you're in!
 
 ### ToDo:
 1. write a better readme
-2. make Control page nicer
+2. ~~make Control page nicer~~
 3. when ship hull == 0, grey out all fields
 4. ~~match timer displayed on overlay~~
 5. Add Damage Deck, Pilot & Upgrade card "viewer" to the overlay & control
