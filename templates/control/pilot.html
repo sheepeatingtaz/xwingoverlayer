@@ -25,8 +25,7 @@
                            value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}
                            data-toggle="toggle" data-on="Active" data-off="Removed" data-size="mini"
                     >
-                    <label for="upgrade-{{ upgrade.id }}-{{ pilot.id }}"><a href="#"
-                                                                            id="upgrade-{{ upgrade.id }}-{{ pilot.id }}-show"
+                    <label for="upgrade-{{ upgrade.id }}-{{ pilot.id }}"><a id="upgrade-{{ upgrade.id }}-{{ pilot.id }}-show"
                                                                             class="btn btn-mini">
                         {{ upgrade }}</a></label>
 

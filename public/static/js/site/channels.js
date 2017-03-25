@@ -25,6 +25,7 @@ $(function () {
             value: $(this).attr("data-value")
         };
         socket.send(JSON.stringify(message));
+        return false;
     });
 
     socket.onmessage = function (message) {
