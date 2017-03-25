@@ -37,7 +37,7 @@ def import_squad(self, xws, player_name):
                 attack=target.attack,
                 agility=target.agility,
                 hull=target.hull,
-                sheild=target.sheild
+                shield=target.shield
             )
 
             stats.save()
@@ -57,7 +57,7 @@ def import_squad(self, xws, player_name):
                         match_pilot.upgrades.add(match_upgrade)
                         for grant in upgrade_object.grants.all():
                             if grant.content_type == ContentType.objects.get(model="statisticset"):
-                                for field in ["skill", "attack", "agility", "hull", "sheild"]:
+                                for field in ["skill", "attack", "agility", "hull", "shield"]:
                                     setattr(
                                         match_pilot.stats,
                                         field,
@@ -70,4 +70,5 @@ def import_squad(self, xws, player_name):
         return squad.id
 
     except Exception as exc:
+        print(exc)
         return False

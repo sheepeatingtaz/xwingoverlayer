@@ -37,6 +37,9 @@ Open a browser and got to http://localhost:8008 and you're in!
 9. Write some tests & get something to automatically build 
 
 ### Screenshots:
+First test of the overlay using OBS to stream Live to YouTube: 
+[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=kfZpG1Zfmmk "Stream test")
+
 #### Home Page
 ![Home Page](screenshots/home.png?raw=true "Home Page")
 

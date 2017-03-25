@@ -1,0 +1,58 @@
+{
+  "description": "",
+  "faction": "rebel",
+  "name": "TFA Rebels",
+  "pilots": [
+    {
+      "name": "rey",
+      "points": 58,
+      "ship": "yt1300",
+      "upgrades": {
+        "ept": [
+          "veteraninstincts"
+        ],
+        "crew": [
+          "finn",
+          "kananjarrus"
+        ],
+        "mod": [
+          "countermeasures"
+        ],
+        "title": [
+          "millenniumfalcon-swx57"
+        ]
+      }
+    },
+    {
+      "name": "poedameron-swx57",
+      "points": 42,
+      "ship": "t70xwing",
+      "upgrades": {
+        "ept": [
+          "pushthelimit"
+        ],
+        "amd": [
+          "bb8"
+        ],
+        "tech": [
+          "primedthrusters"
+        ],
+        "mod": [
+          "autothrusters"
+        ],
+        "title": [
+          "blackone"
+        ]
+      }
+    }
+  ],
+  "points": 100,
+  "vendor": {
+    "yasb": {
+      "builder": "(Yet Another) X-Wing Miniatures Squad Builder",
+      "builder_url": "https://geordanr.github.io/xwing/",
+      "link": "https://geordanr.github.io/xwing/?f=Rebel%20Alliance&d=v4!s!201:27,-1,200,159:40:12:;196:18,-1,148,203:39:15:&sn=TFA%20Rebels"
+    }
+  },
+  "version": "0.3.0"
+}

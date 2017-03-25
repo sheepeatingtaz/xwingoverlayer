@@ -35,7 +35,7 @@
     color: dimgray;
 }
 
-.rebel-alliance-gradient, resistance-gradient {
+.rebel-alliance-gradient, .resistance-gradient {
     background: black; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#320000, black); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#320000, black); /* For Opera 11.1 to 12.0 */
@@ -51,7 +51,7 @@
     background: linear-gradient(#484800, black); /* Standard syntax (must be last) */
 }
 
-.galactic-empire-gradient, first-order-gradient {
+.galactic-empire-gradient, .first-order-gradient {
     background: black; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#004800, black); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#004800, black); /* For Opera 11.1 to 12.0 */
@@ -69,6 +69,5 @@
     margin-left: -50%;
     text-align: center;
     font-family: Bank;
-
 }
 

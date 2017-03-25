@@ -1,0 +1,50 @@
+{
+  "description": "",
+  "faction": "imperial",
+  "name": "Hannah's Empire",
+  "pilots": [
+    {
+      "name": "whisper",
+      "points": 39,
+      "ship": "tiephantom",
+      "upgrades": {
+        "ept": [
+          "veteraninstincts"
+        ],
+        "system": [
+          "firecontrolsystem"
+        ],
+        "mod": [
+          "advancedcloakingdevice"
+        ]
+      }
+    },
+    {
+      "name": "countessryad",
+      "points": 35,
+      "ship": "tiedefender",
+      "upgrades": {
+        "ept": [
+          "pushthelimit"
+        ],
+        "title": [
+          "tiex7"
+        ]
+      }
+    },
+    {
+      "name": "theinquisitor",
+      "points": 25,
+      "ship": "tieadvancedprototype"
+    }
+  ],
+  "points": 99,
+  "vendor": {
+    "yasb": {
+      "builder": "(Yet Another) X-Wing Miniatures Squad Builder",
+      "builder_url": "https://geordanr.github.io/xwing/",
+      "link": "https://geordanr.github.io/xwing/?f=Galactic%20Empire&d=v4!s!79:27,36,-1:-1:9:;195:18,-1,-1:33:-1:;163:-1,-1:-1:-1:&sn=Hannah's%20Empire"
+    }
+  },
+  "version": "0.3.0"
+}

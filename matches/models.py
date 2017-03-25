@@ -67,7 +67,7 @@ class Match(models.Model):
         if self.start_time and self.match_minutes:
             ts = self.start_time + datetime.timedelta(minutes=self.match_minutes)
         else:
-            ts = timezone.now() + datetime.timedelta(minutes=self.match_minutes)
+            ts = timezone.now()# + datetime.timedelta(minutes=self.match_minutes)
         return ts
 
     def get_absolute_url(self):

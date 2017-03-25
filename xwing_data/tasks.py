@@ -38,7 +38,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
 
     if pilot_entry.get('ship_override', None):
         stats = StatisticSet()
-        for field in ["attack", "agility", "hull", "sheild"]:
+        for field in ["attack", "agility", "hull", "shield"]:
             setattr(stats, field, pilot_entry['ship_override'].get(field, 0))
 
         stats.save()
@@ -66,7 +66,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
 def process_ship_data(self, ship_entry, delay=True):
     stats = StatisticSet()
 
-    for field in ["attack", "agility", "hull", "sheild"]:
+    for field in ["attack", "agility", "hull", "shield"]:
         setattr(stats, field, ship_entry.get(field, 0))
     stats.save()
 
@@ -156,7 +156,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
                 attack=0,
                 agility=0,
                 hull=0,
-                sheild=0
+                shield=0
             )
             setattr(object, grant['name'], grant['value'])
             object.save()
