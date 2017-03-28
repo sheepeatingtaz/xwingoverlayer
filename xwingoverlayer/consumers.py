@@ -3,6 +3,7 @@ import json
 from channels import Group
 from channels.sessions import channel_session
 from django.utils import timezone
+from django.utils.timezone import make_aware
 
 from matches.models import MatchUpgrade, MatchPilot, Match
 
@@ -36,7 +37,7 @@ def ws_receive(message):
         match = Match.objects.get(pk=data.get('id'))
         match.start_time = timezone.now()
         match.save()
-        data['finish_time'] = match.end_time().strftime("%Y-%m-%d %H:%M")
+        data['finish_time'] = timezone.localtime(match.end_time()).strftime("%Y-%m-%d %H:%M")
 
     if data.get("type") == "image":
         pass
