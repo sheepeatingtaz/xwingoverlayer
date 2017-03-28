@@ -28,13 +28,12 @@ Open a browser and got to http://localhost:8008 and you're in!
 ### ToDo:
 1. write a better readme
 2. ~~make Control page nicer~~
-3. when ship hull == 0, grey out all fields
+3. ~~when ship hull == 0, grey out all fields~~
 4. ~~match timer displayed on overlay~~
-5. Add Damage Deck, Pilot & Upgrade card "viewer" to the overlay & control
-6. Hide upgrade icons? Not really relevant, but look nice.
-7. ~~Vagrant Setup for instadeploy~~
-8. Heroku Deployment for instadeploy
-9. Write some tests & get something to automatically build 
+5. Add Damage Deck, ~~Pilot & Upgrade~~ card "viewer" to the overlay & control
+6. ~~Vagrant Setup for instadeploy~~
+7. Heroku Deployment for instadeploy
+8. Write some tests & get something to automatically build 
 
 ### Screenshots:
 First test of the overlay using OBS to stream Live to YouTube: 
