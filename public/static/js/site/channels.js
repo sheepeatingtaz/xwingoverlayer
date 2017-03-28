@@ -58,7 +58,9 @@ $(function () {
             $('#' + data.field + '-' + data.id).text(data.value);
             $('#' + data.field + '-' + data.id + '-up').attr('data-value', parseInt(data.value) + 1);
             $('#' + data.field + '-' + data.id + '-down').attr('data-value', parseInt(data.value) - 1);
-            // $('#'+data.field+'-'+data.id).val(data.value);
+            if(data.field=="hull" && data.value <= 0){
+                $('#pilot-' + data.id).addClass("destroyed")
+            }
         }
 
         if (data.type == "image") {

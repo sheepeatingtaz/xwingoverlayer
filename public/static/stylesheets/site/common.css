@@ -268,3 +268,7 @@
     max-width: 40vw;
     max-height: 60vh;
 }
+
+.destroyed {
+    color: dimgrey !important;
+}
