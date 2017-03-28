@@ -47,6 +47,7 @@ class Faction(Base):
         }
         return FACTION_MAP[self.name]
 
+
 class Action(Base):
     pass
 
@@ -102,7 +103,7 @@ class Pilot(XWSBase):
     points = models.IntegerField()
     skill = models.IntegerField()
     ability = models.TextField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True)
+    image = models.CharField(max_length=300, blank=True, null=True)
     faction = models.ForeignKey(Faction)
     ship_override = models.ForeignKey(StatisticSet, blank=True, null=True)
 
@@ -136,11 +137,14 @@ class Upgrade(XWSBase):
     def __str__(self):
         return self.name
 
+    def static_image_url(self):
+        return self.image.url.replace('')
+
     is_unique = models.BooleanField(default=False)
     is_limited = models.BooleanField(default=False)
     text = models.TextField(blank=True, null=True)
     slot = models.ForeignKey(SlotType)
-    image = models.ImageField(blank=True, null=True)
+    image = models.CharField(max_length=300, blank=True, null=True)
     points = models.IntegerField()
     energy = models.IntegerField(default=0)
     faction = models.ManyToManyField(Faction, blank=True)
@@ -149,3 +153,18 @@ class Upgrade(XWSBase):
     ships = models.ManyToManyField(Ship, blank=True)
     size = models.ManyToManyField(BaseSize, blank=True)
     grants = models.ManyToManyField(Grant, blank=True)
+
+
+class DamageDeck(Base):
+    pass
+
+
+class DamageType(Base):
+    pass
+
+
+class DamageCard(Base):
+    amount = models.IntegerField(default=0)
+    type = models.ForeignKey(DamageType)
+    deck = models.ForeignKey(DamageDeck)
+    text = models.TextField(blank=True, null=True)

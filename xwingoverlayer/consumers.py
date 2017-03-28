@@ -38,6 +38,9 @@ def ws_receive(message):
         match.save()
         data['finish_time'] = match.end_time().strftime("%Y-%m-%d %H:%M")
 
+    if data.get("type") == "image":
+        pass
+
     Group('match-{}'.format(match_id)).send({'text': json.dumps(data)})
 
 

@@ -1,7 +1,17 @@
 {% load staticfiles %}
 <div class="panel-heading player_name">
-<p>Damage Deck</p>
+    <p>
+        {% if deck.first.deck.name == "TFA" %}TFA{% else %}Original{% endif %}
+         Damage Deck
+    </p>
 </div>
 <div class="panel-body pilot">
-<p>Cards Here...</p>
+    {% for card in deck %}
+        <a class="btn btn-danger col-sm-12 show-image"
+           id="damage-{{ card.id }}"
+           data-image-url=""
+        >
+            {{ card.name }}
+        </a>
+    {% endfor %}
 </div>

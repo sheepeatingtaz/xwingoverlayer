@@ -4,7 +4,14 @@
     <span class="ship-icon">
         <i class="xwing-miniatures-ship xwing-miniatures-ship-{{ pilot.pilot.ship.xws }}"></i>
     </span>&nbsp;
-        <span class="name"><a id="pilot-{{ pilot.pilot.id }}-show">{{ pilot.pilot.name }}</a></span>&nbsp;
+        <span class="name">
+            <a id="pilot-{{ pilot.pilot.id }}-show"
+               data-image-url="{{ pilot.pilot.image }}"
+               class="show-image"
+            >
+                {{ pilot.pilot.name }}
+            </a>
+        </span>&nbsp;
         <span class="points">{{ pilot.points }}</span>
 
     </div>
@@ -25,9 +32,14 @@
                            value="{{ upgrade.active }}" {% if upgrade.active %}checked{% endif %}
                            data-toggle="toggle" data-on="Active" data-off="Removed" data-size="mini"
                     >
-                    <label for="upgrade-{{ upgrade.id }}-{{ pilot.id }}"><a id="upgrade-{{ upgrade.id }}-{{ pilot.id }}-show"
-                                                                            class="btn btn-mini">
-                        {{ upgrade }}</a></label>
+                    <label for="upgrade-{{ upgrade.id }}-{{ pilot.id }}">
+                        <a id="upgrade-{{ upgrade.id }}-{{ pilot.id }}-show"
+                           class="btn btn-mini show-image"
+                           data-image-url="{{ upgrade.upgrade.image }}"
+                        >
+                            {{ upgrade }}
+                        </a>
+                    </label>
 
                 </div>
             {% endfor %}

@@ -5,7 +5,8 @@
         var match_id = {{ match.id }};
         var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
         var player_1_icon = "{{ faction_one }}";
-        var player_2_icon = "{{ faction_two }}"
+        var player_2_icon = "{{ faction_two }}";
+        var static_url = "{% static "bower_components/xwing-data/images/" %}";
     </script>
 
     <script src="{% static "js/site/channels.js" %}"></script>
@@ -29,5 +30,4 @@
             <div class="btn" id="timer"></div>
         </div>
     </div>
-    <i class="shrunken xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
 {% endblock %}

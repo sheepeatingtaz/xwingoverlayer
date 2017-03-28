@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 
 from matches.forms import BuildMatch
 from matches.models import Match
+from xwing_data.models import DamageCard, DamageDeck
 
 
 class CreateMatchView(CreateView):
@@ -42,4 +43,6 @@ class ControlView(MatchView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['tfa'] = DamageCard.objects.filter(deck=DamageDeck.objects.get(name="TFA"))
+        context['core'] = DamageCard.objects.exclude(deck=DamageDeck.objects.get(name="TFA"))
         return context

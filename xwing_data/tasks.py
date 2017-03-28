@@ -7,7 +7,8 @@ from celery import shared_task
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 
-from xwing_data.models import Ship, Faction, StatisticSet, BaseSize, Action, Pilot, Slot, SlotType, Upgrade, Grant
+from xwing_data.models import Ship, Faction, StatisticSet, BaseSize, Action, Pilot, Slot, SlotType, Upgrade, Grant, \
+    DamageDeck, DamageType, DamageCard
 
 
 @shared_task(bind=True, max_retries=3)
@@ -31,8 +32,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
             "points": pilot_entry['points'] if pilot_entry['points'] != "?" else 99,
             "ability": pilot_entry.get('text', None),
             "faction": faction,
-            "image": os.path.join(settings.XWING_DATA, 'images', pilot_entry['image']) if pilot_entry.get('image',
-                                                                                                          None) else None,
+            "image": pilot_entry['image'] if pilot_entry.get('image', None) else None,
         }
     )
 
@@ -130,8 +130,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
             "is_limited": upgrade_entry.get('limited', False),
             "text": upgrade_entry.get('text', ""),
             "slot": slot_type,
-            "image": os.path.join(settings.XWING_DATA, 'images', upgrade_entry['image']) if upgrade_entry.get('image',
-                                                                                                              None) else None,
+            "image": upgrade_entry['image'] if upgrade_entry.get('image', None) else None,
             "points": upgrade_entry.get('points', 0),
             "energy": upgrade_entry.get('energy', 0),
             "range": upgrade_entry.get('range', ""),
@@ -182,8 +181,50 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
     return True
 
 
+@shared_task(bind=True, max_retries=3)
+def process_damage_deck(self, damage_entry, deck_type, delay=True):
+    damage_deck, created = DamageDeck.objects.update_or_create(
+        name=deck_type
+    )
+
+    damage_type, create = DamageType.objects.update_or_create(
+        name=damage_entry.get('type')
+    )
+
+    card, created = DamageCard.objects.update_or_create(
+        name=damage_entry.get('name'),
+        defaults={
+            "text": damage_entry.get('text', ""),
+            "type": damage_type,
+            "amount": damage_entry.get('amount'),
+            "deck": damage_deck,
+        }
+    )
+    print("Added {} ({}) to system".format(
+        card.name,
+        damage_deck.name
+    ))
+    return True
+
+
+@shared_task(bind=True, max_retries=3)
+def process_damage_deck_tfa(self, damage_entry, delay=True):
+    return process_damage_deck(damage_entry, "TFA", delay)
+
+
+@shared_task(bind=True, max_retries=3)
+def process_damage_deck_core(self, damage_entry, delay=True):
+    return process_damage_deck(damage_entry, "Core", delay)
+
+
 FUNCTIONS = OrderedDict(
-    [('ships', process_ship_data), ('pilots', process_pilot_data), ('upgrades', process_upgrade_data)]
+    [
+        ('ships', process_ship_data),
+        ('pilots', process_pilot_data),
+        ('upgrades', process_upgrade_data),
+        ('damage-deck-core', process_damage_deck_core),
+        ('damage-deck-core-tfa', process_damage_deck_tfa),
+    ]
 )
 
 
@@ -194,7 +235,7 @@ def import_data(self, source, delay=True):
 
     count = 0
     for entry in data:
-        result = FUNCTIONS[source](entry) if not delay else FUNCTIONS[source](entry)
+        result = FUNCTIONS[source](entry) if not delay else FUNCTIONS[source].delay(entry)
         if result:
             count += 1
     return count

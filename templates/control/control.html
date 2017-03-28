@@ -5,7 +5,8 @@
         var match_id = {{ match.id }};
         var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
         var player_1_icon = "{{ faction_one }}";
-        var player_2_icon = "{{ faction_two }}"
+        var player_2_icon = "{{ faction_two }}";
+        var static_url = "{% static "bower_components/xwing-data/images/" %}";
     </script>
 
 
@@ -35,7 +36,10 @@
                 {% include 'control/match_control.html' %}
             </div>
             <div class="col-md-4 panel panel-damage" id="damage">
-                {% include 'control/damage.html' %}
+                {% include 'control/damage.html' with deck=tfa  %}
+            </div>
+            <div class="col-md-4 panel panel-damage" id="damage">
+                {% include 'control/damage.html' with deck=core %}
             </div>
         </div>
     </div>

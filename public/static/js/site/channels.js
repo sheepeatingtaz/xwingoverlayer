@@ -32,7 +32,17 @@ $(function () {
         var message = {
             type: "start_clock",
             id: data[2]
-            };
+        };
+        socket.send(JSON.stringify(message));
+        return false;
+    });
+    $('.show-image').click(function () {
+        var url = $(this).attr("data-image-url");
+        var message = {
+            type: "image",
+            value: url
+        };
+        console.log(url);
         socket.send(JSON.stringify(message));
         return false;
     });
@@ -45,19 +55,44 @@ $(function () {
             $('#upgrades-' + data.pilot_id).marquee();
         }
         if (data.type == "stat") {
-            $('#'+data.field+'-'+data.id).text(data.value);
-            $('#'+data.field+'-'+data.id+'-up').attr('data-value', parseInt(data.value)+1);
-            $('#'+data.field+'-'+data.id+'-down').attr('data-value', parseInt(data.value)-1);
+            $('#' + data.field + '-' + data.id).text(data.value);
+            $('#' + data.field + '-' + data.id + '-up').attr('data-value', parseInt(data.value) + 1);
+            $('#' + data.field + '-' + data.id + '-down').attr('data-value', parseInt(data.value) - 1);
             // $('#'+data.field+'-'+data.id).val(data.value);
+        }
+
+        if (data.type == "image") {
+            var image_href = data.value;
+            if (image_href) {
+                if ($('#lightbox').length > 0) { // #lightbox exists
+                    //place href as img src value
+                    $('#content').html('<img src="' + static_url + image_href + '" />');
+                    //show lightbox window - you could use .show('fast') for a transition
+                    $('#lightbox').show();
+                } else {
+                    var lightbox =
+                        '<div id="lightbox">' +
+                        '<div id="content">' + //insert clicked link's href into img src
+                        '<img src="' + static_url + image_href + '" />' +
+                        '</div>' +
+                        '</div>';
+
+                    //insert lightbox HTML into page
+                    $('body').append(lightbox);
+                }
+                setTimeout(function () {
+                    $('#lightbox').hide();
+                }, 7000);
+            }
         }
         if (data.type == "start_clock") {
             console.log(data)
             var finish_time = data.finish_time;
             $("#timer").countdown(finish_time, function (event) {
-            $(this).html(
-                '<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_1_icon + '"></i>&nbsp;' + event.strftime('%H:%M:%S') + '&nbsp;<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_2_icon + '"></i>'
-            );
-        });
+                $(this).html(
+                    '<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_1_icon + '"></i>&nbsp;' + event.strftime('%H:%M:%S') + '&nbsp;<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_2_icon + '"></i>'
+                );
+            });
         }
     };
 

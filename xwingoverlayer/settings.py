@@ -151,6 +151,8 @@ STATICFILES_FINDERS = (
     'djangobower.finders.BowerFinder',
 )
 
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'public', 'images')
+
 XWING_DATA = os.path.join(
     BOWER_COMPONENTS_ROOT,
     'bower_components',
