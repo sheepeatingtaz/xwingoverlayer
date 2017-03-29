@@ -7,6 +7,9 @@
     "channels",
     "websockets"
   ],
+  "scripts": {
+    "postdeploy": "python manage.py post_deploy"
+  },
   "buildpacks": [
     {
       "url": "heroku/nodejs"

@@ -6,20 +6,20 @@
         var finish_time = "{{ match.end_time|date:"Y/m/d H:i:s" }}";
         var player_1_icon = "{{ faction_one }}";
         var player_2_icon = "{{ faction_two }}";
-        var static_url = "{% static "bower_components/xwing-data/images/" %}";
+        var static_url = "{% static "xwing-data/images/" %}";
     </script>
 
 
-    <script src="{% static "bower_components/jquery.countdown/dist/jquery.countdown.js" %}"></script>
+    <script src="{% static "jquery.countdown/dist/jquery.countdown.js" %}"></script>
     <script src="{% static "js/site/channels.js" %}"></script>
     <script src="{% static "js/site/control.js" %}"></script>
-    <script src="{% static "bower_components/bootstrap-toggle/js/bootstrap-toggle.js" %}"></script>
+    <script src="{% static "bootstrap-toggle/js/bootstrap-toggle.js" %}"></script>
 {% endblock %}
 {% block css %}
     <link href="{% static "stylesheets/site/4-col-portfolio.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "stylesheets/site/common.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "stylesheets/site/control.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "bower_components/bootstrap-toggle/css/bootstrap-toggle.css" %}" rel="stylesheet"
+    <link href="{% static "bootstrap-toggle/css/bootstrap-toggle.css" %}" rel="stylesheet"
           type="text/css">
 {% endblock %}
 {% block content %}
