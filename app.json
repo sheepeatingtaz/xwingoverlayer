@@ -16,11 +16,7 @@
     }
   ],
   "scripts": {
-    "postdeploy": [
-      "python manage.py migrate",
-      "python manage.py bower install",
-      "python manage.py collectstatic --noinput",
-      "python manage.py import_xwing_data"
+    "postdeploy": "python manage.py migrate; python manage.py bower install; python manage.py import_xwing_data; python manage.py collectstatic --noinput;"
     ]
   },
   "env": {
