@@ -16,7 +16,7 @@
     }
   ],
   "scripts": {
-    "postdeploy": "python manage.py bower install && python manage.py import_xwing_data && python manage.py clean_bower && python manage.py collectstatic --noinput"
+    "postdeploy": "heroku_post_deploy.sh"
   },
   "env": {
     "SECRET_KEY": {
