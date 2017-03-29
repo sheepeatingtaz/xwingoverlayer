@@ -9,7 +9,10 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/amanjain/heroku-buildpack-python-with-django-bower.git"
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/amanjain/heroku-buildpack-python-with-django-bower"
     }
   ],
   "scripts": {
