@@ -15,9 +15,6 @@
       "url": "heroku/python"
     }
   ],
-  "scripts": {
-    "postdeploy": "heroku_post_deploy.sh"
-  },
   "env": {
     "SECRET_KEY": {
       "description": "Django's SECRET_KEY setting",
