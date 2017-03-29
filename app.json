@@ -1,5 +1,5 @@
 {
-  "name": "X-wing Miniatures Overlay Generator",
+  "name": "X-wing Overlayer",
   "description": "A system to generate overlays for streaming of the X-wing Miniatures tabletop game ",
   "repository": "https://github.com/sheepeatingtaz/xwingoverlayer",
   "keywords": [
@@ -13,7 +13,12 @@
     }
   ],
   "scripts": {
-    "postdeploy": "python manage.py migrate && python manage.py bower install && python manage.py collectstatic --noinput && python manage.py import_xwing_data"
+    "postdeploy": [
+      "python manage.py migrate",
+      "python manage.py bower install",
+      "python manage.py collectstatic --noinput",
+      "python manage.py import_xwing_data"
+    ]
   },
   "env": {
     "SECRET_KEY": {
