@@ -22,6 +22,9 @@ vagrant up
 
 Open a browser and got to http://localhost:8008 and you're in!
 
+
+Alternatively: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sheepeatingtaz/xwingoverlayer)
+
 {more usage instructions to follow}
 
 
@@ -32,12 +35,12 @@ Open a browser and got to http://localhost:8008 and you're in!
 4. ~~match timer displayed on overlay~~
 5. Add Damage Deck, ~~Pilot & Upgrade~~ card "viewer" to the overlay & control
 6. ~~Vagrant Setup for instadeploy~~
-7. Heroku Deployment for instadeploy
+7. ~~Heroku Deployment for instadeploy~~
 8. Write some tests & get something to automatically build 
 
 ### Screenshots:
-First test of the overlay using OBS to stream Live to YouTube: 
-[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=kfZpG1Zfmmk "Stream test")
+
+[First test of the overlay using OBS to stream Live to YouTube](https://www.youtube.com/watch?v=kfZpG1Zfmmk "Stream test")
 
 #### Home Page
 ![Home Page](screenshots/home.png?raw=true "Home Page")
