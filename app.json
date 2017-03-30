@@ -15,7 +15,7 @@
       "url": "heroku/nodejs"
     },
     {
-      "url": "heroku/python"
+      "url": "https://github.com/sheepeatingtaz/heroku-buildpack-python.git"
     }
   ],
   "env": {
