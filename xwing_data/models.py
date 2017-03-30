@@ -67,7 +67,7 @@ class StatisticSet(models.Model):
             self.attack,
             self.agility,
             self.hull,
-            self.shield
+            self.shields
         )
 
     def skill_dict(self):
@@ -76,7 +76,7 @@ class StatisticSet(models.Model):
         d["attack"] = self.attack
         d["agility"] = self.agility
         d["hull"] = self.hull
-        d["shield"] = self.shield
+        d["shields"] = self.shields
 
         return d
 
@@ -84,7 +84,7 @@ class StatisticSet(models.Model):
     attack = models.IntegerField()
     agility = models.IntegerField()
     hull = models.IntegerField()
-    shield = models.IntegerField()
+    shields = models.IntegerField()
 
 
 class Ship(XWSBase):

@@ -38,7 +38,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
 
     if pilot_entry.get('ship_override', None):
         stats = StatisticSet()
-        for field in ["attack", "agility", "hull", "shield"]:
+        for field in ["attack", "agility", "hull", "shields"]:
             setattr(stats, field, pilot_entry['ship_override'].get(field, 0))
 
         stats.save()
@@ -66,7 +66,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
 def process_ship_data(self, ship_entry, delay=True):
     stats = StatisticSet()
 
-    for field in ["attack", "agility", "hull", "shield"]:
+    for field in ["attack", "agility", "hull", "shields"]:
         setattr(stats, field, ship_entry.get(field, 0))
     stats.save()
 
@@ -155,7 +155,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
                 attack=0,
                 agility=0,
                 hull=0,
-                shield=0
+                shields=0
             )
             setattr(object, grant['name'], grant['value'])
             object.save()
@@ -232,8 +232,9 @@ FUNCTIONS = OrderedDict(
 def import_data(self, source, delay=True):
     with open(os.path.join(settings.XWING_DATA, 'data', '{}.js'.format(source)), encoding='utf8') as raw_data:
         data = json.load(raw_data)
-
     count = 0
+    if source == 'upgrades':
+        Grant.objects.all().delete()
     for entry in data:
         result = FUNCTIONS[source](entry) if not delay else FUNCTIONS[source].delay(entry)
         if result:

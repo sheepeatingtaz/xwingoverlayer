@@ -42,7 +42,7 @@
     color: #eeea1e;
 }
 
-.shield {
+.shields {
     color: #7fd5e7;
 }
 
@@ -122,20 +122,20 @@
     border-color: #c9c519;
 }
 
-.btn-shield {
+.btn-shields {
     color: #ffffff;
     background-color: #7fd5e7;
     border-color: #7fd5e7;
 }
 
-.btn-shield:focus,
-.btn-shield.focus {
+.btn-shields:focus,
+.btn-shields.focus {
     color: #ffffff;
     background-color: #6bb6c7;
     border-color: #6bb6c7;
 }
 
-.btn-shield:hover {
+.btn-shields:hover {
     color: #ffffff;
     background-color: #6bb6c7;
     border-color: #6bb6c7;
