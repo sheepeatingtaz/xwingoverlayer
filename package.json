@@ -1,0 +1,22 @@
+{
+  "name": "xwingoverlayer",
+  "version": "1.0.0",
+  "description": "Work in Progress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheepeatingtaz/xwingoverlayer.git"
+  },
+  "author": "sheepeatingtaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sheepeatingtaz/xwingoverlayer/issues"
+  },
+  "homepage": "https://github.com/sheepeatingtaz/xwingoverlayer",
+  "dependencies": {
+    "bower": "1.8.0"
+  }
+}

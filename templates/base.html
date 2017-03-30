@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +10,18 @@
     <meta name="robots" content="noindex">
     <title>XWO::{% block title %}{{ match }}{% endblock %}</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "bower_components/xwing-miniatures-font/dist/xwing-miniatures.css" %}" rel="stylesheet"
+    <link href="{% static "xwing-miniatures-font/dist/xwing-miniatures.css" %}" rel="stylesheet"
           type="text/css">
     <link href="{% static "stylesheets/bootstrap.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "bower_components/components-font-awesome/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "components-font-awesome/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
 
     {% block css %}{% endblock %}
 
     <!-- Our js -->
-    <script src="{% static "bower_components/jquery/dist/jquery.js" %}"></script>
-    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
+    <script src="{% static "jquery/dist/jquery.js" %}"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
     <script src="{% static "js/site/reconnecting-websockets.js" %}"></script>
-    <script src="{% static "bower_components/jquery.marquee/jquery.marquee.js" %}"></script>
+    <script src="{% static "jquery.marquee/jquery.marquee.js" %}"></script>
 
     {% block js %}{% endblock %}
 

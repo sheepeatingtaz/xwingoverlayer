@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 .idea/
-components/
+components/bower_components/
 staticfiles/
 .vagrant
 xwingoverlayer.sqlite3

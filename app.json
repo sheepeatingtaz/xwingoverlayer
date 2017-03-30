@@ -1,0 +1,41 @@
+{
+  "name": "X-wing Overlayer",
+  "description": "A system to generate overlays for streaming of the X-wing Miniatures tabletop game ",
+  "repository": "https://github.com/sheepeatingtaz/xwingoverlayer",
+  "keywords": [
+    "django",
+    "channels",
+    "websockets"
+  ],
+  "scripts": {
+    "postdeploy": "python manage.py post_deploy"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/sheepeatingtaz/heroku-buildpack-python.git"
+    }
+  ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "Django's SECRET_KEY setting",
+      "generator": "secret"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      " size": "Free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "Free"
+    }
+  }
+}
