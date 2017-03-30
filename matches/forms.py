@@ -74,6 +74,13 @@ class BuildMatch(forms.ModelForm):
             )
         )
 
+    def clean(self):
+        cleaned_data = super().clean()
+        player_one = cleaned_data.get('squad_one')
+        player_two = cleaned_data.get('squad_two')
+        if player_one == player_two:
+            self.add_error('squad_two', "A player cannot play themselves with the same squad. If you need a mirror match, you need to upload the squad twice.")
+
 
 class GenericDeleteForm(forms.Form):
     def __init__(self, *args, **kwargs):

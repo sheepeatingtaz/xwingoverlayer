@@ -71,4 +71,6 @@ def import_squad(self, xws, player_name):
 
     except Exception as exc:
         print(exc)
+        if squad:
+            squad.delete() #Tidy Up
         return False
