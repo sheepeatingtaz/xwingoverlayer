@@ -14,8 +14,10 @@
     <script src="{% static "js/site/match.js" %}"></script>
 {% endblock %}
 {% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <link href="{% static "stylesheets/site/overlay.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "stylesheets/site/common.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "stylesheets/site/pleasewait.css" %}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block content %}
     <div class="row">
@@ -28,6 +30,15 @@
         </div>
         <div class="timer-container">
             <div class="btn" id="timer"></div>
+        </div>
+        <div class="please-wait">
+            <div class="squad-one">
+                <div class="image-marquee">{{ match.squad_one.all_images|safe }}</div>
+            </div>
+            <div class="branding">Up next from <span class="fathan">Fat Hans</span><span class="branding-link">@</span><img class="logo" src="{% static "images/vault14.png"%}"/></div>
+            <div class="squad-two">
+                <div class="image-marquee">{{ match.squad_two.all_images|safe }}</div>
+            </div>
         </div>
     </div>
 {% endblock %}

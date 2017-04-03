@@ -6,6 +6,8 @@ from django.urls import reverse_lazy
 
 from xwing_data.models import Pilot, Upgrade, StatisticSet
 from django.utils import timezone
+from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.utils.html import escape
 
 
 class MatchUpgrade(models.Model):
@@ -37,6 +39,18 @@ class MatchPilot(models.Model):
             )
         return " &bull; ".join(upgrades)
 
+    def upgrade_list_images(self):
+        upgrades = []
+        for upgrade in self.upgrades.all():
+            upgrades.append(
+                "<img src={}/>".format(
+                    static('xwing-data/images/{}'.format(
+                        upgrade.upgrade.image.replace(" ", "%20")
+                    ))
+                )
+            )
+        return "".join(upgrades)
+
     pilot = models.ForeignKey(Pilot)
     points = models.IntegerField(default=0)
 
@@ -50,6 +64,18 @@ class Squad(models.Model):
             self.list_name,
             self.player_name
         )
+
+    def all_images(self):
+        images = []
+        for pilot in self.pilots.all():
+            images.append("<img src={}/>".format(
+                    static('xwing-data/images/{}'.format(
+                        pilot.pilot.image.replace(" ", "%20")
+                    ))
+                )
+            )
+            images.append(pilot.upgrade_list_images())
+        return "".join(images)
 
     player_name = models.CharField(max_length=200, default="Joe Bloggs")
     list_name = models.CharField(max_length=200, default="Unnamed List")
@@ -67,7 +93,7 @@ class Match(models.Model):
         if self.start_time and self.match_minutes:
             ts = self.start_time + datetime.timedelta(minutes=self.match_minutes)
         else:
-            ts = timezone.now()# + datetime.timedelta(minutes=self.match_minutes)
+            ts = timezone.now()  # + datetime.timedelta(minutes=self.match_minutes)
         return ts
 
     def get_absolute_url(self):
