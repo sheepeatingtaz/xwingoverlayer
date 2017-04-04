@@ -42,6 +42,9 @@ def ws_receive(message):
     if data.get("type") == "image":
         pass
 
+    if data.get("type") == "please_wait":
+        pass
+
     Group('match-{}'.format(match_id)).send({'text': json.dumps(data)})
 
 

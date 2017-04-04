@@ -1,10 +1,11 @@
 {% load static %}
 <div class="panel-heading player_name">
-<p>Match Control</p>
+    <p>Match Control</p>
 </div>
 <div class="panel-body pilot">
-<div class="timer-container">
-    <div class="btn" id="timer"></div>
-</div>
-<a class="btn btn-success col-sm-12 start-match" id="start-match-{{ match.id }}">Start Match Timer</a>
+    <a class="btn btn-success col-sm-12 please_wait" id="please-wait-{{ match.id }}">Toggle 'Please Wait'</a>
+    <div class="timer-container">
+        <div class="btn" id="timer"></div>
+    </div>
+    <a class="btn btn-success col-sm-12 start-match" id="start-match-{{ match.id }}">Start Match Timer</a>
 </div>

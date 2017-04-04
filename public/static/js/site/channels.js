@@ -46,6 +46,16 @@ $(function () {
         socket.send(JSON.stringify(message));
         return false;
     });
+    $('.please_wait').click(function () {
+        var data = $(this).attr("id").split("-");
+        var message = {
+            type: "please_wait",
+            value: data[2]
+        };
+        socket.send(JSON.stringify(message));
+        return false;
+    });
+
 
     socket.onmessage = function (message) {
         var data = JSON.parse(message.data);
@@ -88,13 +98,16 @@ $(function () {
             }
         }
         if (data.type == "start_clock") {
-            console.log(data)
             var finish_time = data.finish_time;
             $("#timer").countdown(finish_time, function (event) {
                 $(this).html(
                     '<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_1_icon + '"></i>&nbsp;' + event.strftime('%H:%M:%S') + '&nbsp;<i class="shrunken xwing-miniatures-font xwing-miniatures-font-' + player_2_icon + '"></i>'
                 );
             });
+        }
+
+        if (data.type == "please_wait") {
+            $(".please-wait").toggle();
         }
     };
 

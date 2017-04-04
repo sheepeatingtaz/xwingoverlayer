@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.marquee').marquee();
     $('.image-marquee').marquee({
-        duration: 15000,
+        duration: 10000,
         duplicated: true
     });
     $("#timer").countdown(finish_time, function (event) {
