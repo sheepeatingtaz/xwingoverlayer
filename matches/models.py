@@ -43,7 +43,7 @@ class MatchPilot(models.Model):
         upgrades = []
         for upgrade in self.upgrades.all():
             upgrades.append(
-                "<img src={}/>".format(
+                '<img src="{}"/>'.format(
                     static('xwing-data/images/{}'.format(
                         upgrade.upgrade.image.replace(" ", "%20")
                     ))
@@ -68,7 +68,7 @@ class Squad(models.Model):
     def all_images(self):
         images = []
         for pilot in self.pilots.all():
-            images.append("<img src={}/>".format(
+            images.append('<img src="{}"/>'.format(
                     static('xwing-data/images/{}'.format(
                         pilot.pilot.image.replace(" ", "%20")
                     ))
