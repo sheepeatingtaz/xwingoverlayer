@@ -8,7 +8,16 @@ Takes XWS files as imports, and allows many of them. Generates the starting stat
 
 When a match is created, a control panel is available that uses websockets to push the changes (e.g. losing shield/hull, discarding upgrade cards) back to the overlay in realtime, no overlay editing required.
 
-Uses lots of good stuff made by other people: please see point 1 in ToDo for why I've not listed them here...
+Clicking on Pilots, upgrades or damage cards in the Control Page will display the card on both the overlay and the control page for 7 seconds (so both the commentator and adoring public can see what you are talking about!)
+
+Uses lots of good stuff made by other people:
+
+https://github.com/guidokessels/xwing-data
+https://github.com/geordanr/xwing-miniatures-font
+
+Without these, this project wouldn't happen.
+
+as well as jQuery, bootstrap and a few plugins for such.
 
 Feedback & Contributions welcome!
 
