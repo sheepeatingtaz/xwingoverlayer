@@ -36,27 +36,27 @@
 }
 
 .rebel-alliance-gradient, .resistance-gradient {
-    background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#320000, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#320000, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#320000, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#320000, black); /* Standard syntax (must be last) */
+    background: rgba(0, 0, 0, 0.6); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(51, 34, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(51, 34, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(51, 34, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(51, 34, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Standard syntax (must be last) */
 }
 
 .scum-and-villainy-gradient {
-    background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#484800, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#484800, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#484800, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#484800, black); /* Standard syntax (must be last) */
+    background: rgba(0, 0, 0, 0.6); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(72, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(72, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(72, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(72, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Standard syntax (must be last) */
 }
 
 .galactic-empire-gradient, .first-order-gradient {
-    background: black; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#004800, black); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#004800, black); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#004800, black); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#004800, black); /* Standard syntax (must be last) */
+    background: rgba(0, 0, 0, 0.6); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 72, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Standard syntax (must be last) */
 }
 
 .timer-container {
