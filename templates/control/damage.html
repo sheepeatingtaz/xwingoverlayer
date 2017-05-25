@@ -9,7 +9,7 @@
     {% for card in deck %}
         <a class="btn btn-danger col-sm-12 show-image"
            id="damage-{{ card.id }}"
-           data-image-url=""
+           data-image-url="{{ card.image }}"
         >
             {{ card.name }}
         </a>

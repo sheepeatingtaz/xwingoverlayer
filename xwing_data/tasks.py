@@ -21,7 +21,7 @@ def process_pilot_data(self, pilot_entry, delay=True):
 
     faction, created = Faction.objects.update_or_create(name=pilot_entry['faction'], defaults={})
 
-    pilot, created = Pilot.objects.update_or_create(
+    pilot, created_pilot = Pilot.objects.update_or_create(
         xws=pilot_entry['xws'],
         id=pilot_entry['id'],
         defaults={
@@ -58,7 +58,11 @@ def process_pilot_data(self, pilot_entry, delay=True):
         )
         slot.save()
 
-    print("Added {} ({}) to system".format(pilot.name, pilot.faction))
+    print("{} {} ({}) to system".format(
+        "Added" if created_pilot else "Updated",
+        pilot.name,
+        pilot.faction
+    ))
     return True
 
 
@@ -72,7 +76,7 @@ def process_ship_data(self, ship_entry, delay=True):
 
     base_size, created = BaseSize.objects.update_or_create(name=ship_entry['size'], defaults={})
 
-    ship, created = Ship.objects.update_or_create(
+    ship, created_ship = Ship.objects.update_or_create(
         xws=ship_entry['xws'],
         id=ship_entry['id'],
         defaults={
@@ -90,7 +94,10 @@ def process_ship_data(self, ship_entry, delay=True):
         action, created = Action.objects.update_or_create(name=action_name, defaults={})
         ship.actions.add(action)
 
-    print("Added {} to system".format(ship.name))
+    print("{} {} to system".format(
+        "Added" if created_ship else "Updated",
+        ship.name
+    ))
     return True
 
 
@@ -122,7 +129,7 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
     if upgrade_entry.get('faction', False):
         faction, created = Faction.objects.update_or_create(name=upgrade_entry['faction'], defaults={})
 
-    upgrade, created = Upgrade.objects.update_or_create(
+    upgrade, created_upgrade = Upgrade.objects.update_or_create(
         xws=upgrade_entry['xws'],
         id=upgrade_entry['id'],
         defaults={
@@ -177,7 +184,11 @@ def process_upgrade_data(self, upgrade_entry, delay=True):
         grant_object.save()
         upgrade.grants.add(grant_object)
 
-    print("Added {} {} to system".format(upgrade.slot, upgrade.name))
+    print("{} {} {} to system".format(
+        "Added" if created_upgrade else "Updated",
+        upgrade.slot,
+        upgrade.name
+    ))
     return True
 
 
@@ -198,6 +209,7 @@ def process_damage_deck(self, damage_entry, deck_type, delay=True):
             "type": damage_type,
             "amount": damage_entry.get('amount'),
             "deck": damage_deck,
+            "image": damage_entry['image'] if damage_entry.get('image', None) else None,
         }
     )
     print("Added {} ({}) to system".format(

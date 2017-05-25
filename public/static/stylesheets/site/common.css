@@ -11,19 +11,19 @@
 .player_name, .list_name {
     font-family: Bank;
     color: white;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .pilot {
     color: white;
     font-family: Kimberley;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .upgrades {
     color: white;
     font-family: Kimberley;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .skill {

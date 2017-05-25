@@ -80,7 +80,7 @@ $(function () {
                     //place href as img src value
                     $('#content').html('<img src="' + static_url + image_href + '" />');
                     //show lightbox window - you could use .show('fast') for a transition
-                    $('#lightbox').show();
+                    $('#lightbox').show('fast');
                 } else {
                     var lightbox =
                         '<div id="lightbox">' +
@@ -93,7 +93,7 @@ $(function () {
                     $('body').append(lightbox);
                 }
                 setTimeout(function () {
-                    $('#lightbox').hide();
+                    $('#lightbox').hide('fast');
                 }, 7000);
             }
         }

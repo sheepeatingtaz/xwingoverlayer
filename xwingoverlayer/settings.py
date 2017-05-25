@@ -131,7 +131,7 @@ USE_TZ = True
 
 BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'components')
 BOWER_INSTALLED_APPS = (
-    'xwing-data',
+    'https://github.com/guidokessels/xwing-data.git#master',
     'xwing-miniatures-font',
     'bootstrap',
     'jQuery.Marquee',

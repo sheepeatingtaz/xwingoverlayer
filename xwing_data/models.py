@@ -168,3 +168,4 @@ class DamageCard(Base):
     type = models.ForeignKey(DamageType)
     deck = models.ForeignKey(DamageDeck)
     text = models.TextField(blank=True, null=True)
+    image = models.CharField(max_length=300, blank=True, null=True)
