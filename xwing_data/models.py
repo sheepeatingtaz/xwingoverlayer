@@ -23,8 +23,17 @@ class XWSBase(Base):
     id = models.IntegerField(unique=True, primary_key=True)
     xws = models.CharField(max_length=100)
 
-
 class Faction(Base):
+    XWS_MAP = {
+        "Galactic Empire": "imperial",
+        "First Order": "imperial",
+        "Rebel Alliance": "rebel",
+        "Resistance": "rebel",
+        "Scum and Villainy": "scum",
+    }
+
+    xws = models.CharField(max_length=100)
+
     def icon(self):
         FACTION_MAP = {
             "Galactic Empire": "empire",
@@ -46,6 +55,11 @@ class Faction(Base):
 
         }
         return FACTION_MAP[self.name]
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.xws = self.XWS_MAP[self.name]
+        super().save(force_insert, force_update, using, update_fields)
 
 
 class Action(Base):

@@ -2,7 +2,7 @@ from celery import shared_task
 from django.contrib.contenttypes.models import ContentType
 
 from matches.models import Squad, MatchPilot, MatchUpgrade, Match
-from xwing_data.models import Pilot, Upgrade, StatisticSet
+from xwing_data.models import Pilot, Upgrade, StatisticSet, Ship, Faction
 
 
 @shared_task(bind=True, max_retries=3)
@@ -23,8 +23,15 @@ def import_squad(self, xws, player_name):
 
         squad.save()
 
+        factions = Faction.objects.filter(xws=xws.get("faction"))
+
         for pilot in xws.get("pilots", []):
-            pilot_data = Pilot.objects.get(xws=pilot.get("name"))
+            pilot_data = Pilot.objects.get(
+                xws=pilot.get("name"),
+                ship=Ship.objects.get(xws=pilot.get("ship")),
+                faction__in=factions
+
+            )
             if pilot_data.ship_override:
                 target = pilot_data.ship_override
             else:
@@ -72,5 +79,5 @@ def import_squad(self, xws, player_name):
     except Exception as exc:
         print(exc)
         if squad:
-            squad.delete() #Tidy Up
+            squad.delete()  # Tidy Up
         return False

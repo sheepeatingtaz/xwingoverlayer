@@ -1,0 +1,76 @@
+{
+"version": "0.3.0",
+"name": "Kath & Crew",
+"faction": "scum",
+"points": 100,
+"pilots": [
+{
+"name": "kathscarlet",
+"ship": "firespray31",
+"points": 42,
+"upgrades": {
+"ept": [
+"fearlessness"
+],
+"crew": [
+"tailgunner"
+],
+"illicit": [
+"inertialdampeners"
+],
+"title": [
+"slavei"
+],
+"mod": [
+"longrangescanners"
+]
+}
+},
+{
+"name": "kavil",
+"ship": "ywing",
+"points": 33,
+"upgrades": {
+"turret": [
+"dorsalturret"
+],
+"samd": [
+"unhingedastromech"
+],
+"ept": [
+"pushthelimit"
+],
+"mod": [
+"vectoredthrusters"
+]
+}
+},
+{
+"name": "ndrusuhlak",
+"ship": "z95headhunter",
+"points": 25,
+"upgrades": {
+"missile": [
+"clustermissiles"
+],
+"illicit": [
+"glitterstim"
+],
+"ept": [
+"lonewolf"
+],
+"mod": [
+"guidancechips"
+]
+}
+}
+],
+"vendor": {
+"voidstate": {
+"squadron_id": 676258,
+"link": "http://xwing-builder.co.uk/view/676258/kath-crew",
+"builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+"builder_link": "http://xwing-builder.co.uk/build"
+}
+}
+}
