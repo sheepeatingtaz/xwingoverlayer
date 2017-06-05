@@ -58,7 +58,7 @@ def import_squad(self, xws, player_name):
             if pilot.get('upgrades', []):
                 for upgrade_type, upgrades in pilot['upgrades'].items():
                     for upgrade in upgrades:
-                        upgrade_object = Upgrade.objects.get(xws=upgrade)
+                        upgrade_object = Upgrade.objects.filter(xws=upgrade).last()
                         match_upgrade = MatchUpgrade(upgrade=upgrade_object)
                         match_upgrade.save()
                         match_pilot.upgrades.add(match_upgrade)

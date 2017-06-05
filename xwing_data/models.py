@@ -1,5 +1,6 @@
 from collections import OrderedDict
 
+import re
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -149,7 +150,7 @@ class Grant(Base):
 
 class Upgrade(XWSBase):
     def __str__(self):
-        return self.name
+        return re.sub("\([+\-]\d\)", "", self.name).strip()  # Just for adaptability at the moment, get rid of the +/-1
 
     def static_image_url(self):
         return self.image.url.replace('')

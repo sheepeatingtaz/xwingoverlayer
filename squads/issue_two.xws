@@ -1,0 +1,67 @@
+{
+  "version": "0.3.0",
+  "name": "Biggs, Rex, Thayne, Jess",
+  "faction": "rebel",
+  "points": 99,
+  "description": "Rebel Mini Swarm",
+  "pilots": [
+    {
+      "name": "thanekyrell",
+      "ship": "arc170",
+      "points": 31,
+      "upgrades": {
+        "amd": [
+          "m9g8"
+        ],
+        "crew": [
+          "jynerso"
+        ],
+        "title": [
+          "allianceoverhaul"
+        ]
+      }
+    },
+    {
+      "name": "captainrex",
+      "ship": "tiefighter",
+      "points": 14
+    },
+    {
+      "name": "jesspava",
+      "ship": "t70xwing",
+      "points": 26,
+      "upgrades": {
+        "amd": [
+          "r2d6"
+        ],
+        "mod": [
+          "integratedastromech"
+        ],
+        "ept": [
+          "adaptability"
+        ]
+      }
+    },
+    {
+      "name": "biggsdarklighter",
+      "ship": "xwing",
+      "points": 28,
+      "upgrades": {
+        "amd": [
+          "r5p9"
+        ],
+        "mod": [
+          "integratedastromech"
+        ]
+      }
+    }
+  ],
+  "vendor": {
+    "voidstate": {
+      "squadron_id": 709191,
+      "link": "http://xwing-builder.co.uk/view/709191/biggs-rex-thayne-jess",
+      "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+      "builder_link": "http://xwing-builder.co.uk/build"
+    }
+  }
+}
