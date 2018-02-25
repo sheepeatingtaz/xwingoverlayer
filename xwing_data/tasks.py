@@ -7,8 +7,7 @@ from celery import shared_task
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 
-from xwing_data.models import Ship, Faction, StatisticSet, BaseSize, Action, Pilot, Slot, SlotType, Upgrade, Grant, \
-    DamageDeck, DamageType, DamageCard
+from xwing_data.models import *
 
 
 @shared_task(bind=True, max_retries=3)
@@ -252,3 +251,21 @@ def import_data(self, source, delay=True):
         if result:
             count += 1
     return count
+
+
+@shared_task(bind=True, max_retries=3)
+def delete_all_xwing_data(self):
+    Faction.objects.all().delete()
+    Action.objects.all().delete()
+    BaseSize.objects.all().delete()
+    SlotType.objects.all().delete()
+    StatisticSet.objects.all().delete()
+    Ship.objects.all().delete()
+    Pilot.objects.all().delete()
+    Slot.objects.all().delete()
+    GrantType.objects.all().delete()
+    Grant.objects.all().delete()
+    Upgrade.objects.all().delete()
+    DamageDeck.objects.all().delete()
+    DamageType.objects.all().delete()
+    DamageCard.objects.all().delete()

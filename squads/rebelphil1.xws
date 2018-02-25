@@ -1,0 +1,65 @@
+{
+  "name": "Rebel Phil",
+  "points": 99,
+  "faction": "rebel",
+  "version": "1.0.0",
+  "description": "",
+  "pilots": [
+    {
+      "name": "poedameron-swx57",
+      "ship": "t70xwing",
+      "upgrades": {
+        "ept": [
+          "veteraninstincts"
+        ],
+        "amd": [
+          "r2d2"
+        ],
+        "tech": [
+          "advancedoptics"
+        ],
+        "title": [
+          "blackone"
+        ],
+        "mod": [
+          "autothrusters"
+        ]
+      }
+    },
+    {
+      "name": "dashrendar",
+      "ship": "yt2400",
+      "upgrades": {
+        "ept": [
+          "lonewolf"
+        ],
+        "cannon": [
+          "heavylasercannon"
+        ],
+        "crew": [
+          "rey"
+        ],
+        "title": [
+          "outrider"
+        ],
+        "mod": [
+          "smugglingcompartment",
+          "countermeasures"
+        ],
+        "illicit": [
+          "riggedcargochute"
+        ]
+      }
+    }
+  ],
+  "vendor": {
+    "aurora": {
+      "builder": "Aurora Squad Builder",
+      "builder_url": "https://itunes.apple.com/us/app/aurora-squad-builder/id1020767927?mt=8",
+      "maxpoints": 100,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0
+    }
+  }
+}

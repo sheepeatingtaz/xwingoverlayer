@@ -133,7 +133,7 @@ BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'components')
 BOWER_INSTALLED_APPS = (
     'https://github.com/guidokessels/xwing-data.git#master',
     'xwing-miniatures-font',
-    'bootstrap',
+    'bootstrap#^4.0.0',
     'jQuery.Marquee',
     'components-font-awesome',
     'bootstrap-combobox',

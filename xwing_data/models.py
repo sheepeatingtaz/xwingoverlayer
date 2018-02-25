@@ -24,6 +24,7 @@ class XWSBase(Base):
     id = models.IntegerField(unique=True, primary_key=True)
     xws = models.CharField(max_length=100)
 
+
 class Faction(Base):
     XWS_MAP = {
         "Galactic Empire": "imperial",
@@ -104,9 +105,9 @@ class StatisticSet(models.Model):
 
 class Ship(XWSBase):
     faction = models.ManyToManyField(Faction)
-    stats = models.OneToOneField(StatisticSet)
+    stats = models.OneToOneField(StatisticSet, on_delete=models.CASCADE)
     actions = models.ManyToManyField(Action)
-    size = models.ForeignKey(BaseSize)
+    size = models.ForeignKey(BaseSize, on_delete=models.CASCADE)
 
 
 class Pilot(XWSBase):
@@ -114,21 +115,21 @@ class Pilot(XWSBase):
         unique_together = ('xws', 'faction', 'ship')
 
     is_unique = models.BooleanField(default=False)
-    ship = models.ForeignKey(Ship)
+    ship = models.ForeignKey(Ship, on_delete=models.CASCADE)
     points = models.IntegerField()
     skill = models.IntegerField()
     ability = models.TextField(blank=True, null=True)
     image = models.CharField(max_length=300, blank=True, null=True)
-    faction = models.ForeignKey(Faction)
-    ship_override = models.ForeignKey(StatisticSet, blank=True, null=True)
+    faction = models.ForeignKey(Faction, on_delete=models.CASCADE)
+    ship_override = models.ForeignKey(StatisticSet, blank=True, null=True, on_delete=models.CASCADE)
 
 
 class Slot(models.Model):
     def __str__(self):
         return self.slot_type.__str__()
 
-    slot_type = models.ForeignKey(SlotType)
-    pilot = models.ForeignKey(Pilot)
+    slot_type = models.ForeignKey(SlotType, on_delete=models.CASCADE)
+    pilot = models.ForeignKey(Pilot, on_delete=models.CASCADE)
 
 
 class GrantType(Base):
@@ -158,7 +159,7 @@ class Upgrade(XWSBase):
     is_unique = models.BooleanField(default=False)
     is_limited = models.BooleanField(default=False)
     text = models.TextField(blank=True, null=True)
-    slot = models.ForeignKey(SlotType)
+    slot = models.ForeignKey(SlotType, on_delete=models.CASCADE)
     image = models.CharField(max_length=300, blank=True, null=True)
     points = models.IntegerField()
     energy = models.IntegerField(default=0)
@@ -180,7 +181,7 @@ class DamageType(Base):
 
 class DamageCard(Base):
     amount = models.IntegerField(default=0)
-    type = models.ForeignKey(DamageType)
-    deck = models.ForeignKey(DamageDeck)
+    type = models.ForeignKey(DamageType, on_delete=models.CASCADE)
+    deck = models.ForeignKey(DamageDeck, on_delete=models.CASCADE)
     text = models.TextField(blank=True, null=True)
     image = models.CharField(max_length=300, blank=True, null=True)

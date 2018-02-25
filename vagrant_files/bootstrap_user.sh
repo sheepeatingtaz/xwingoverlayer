@@ -4,7 +4,7 @@ cd /home/vagrant
 cp /vagrant/vagrant_files/.bashrc /home/vagrant/.bashrc
 cp /vagrant/vagrant_files/.inputrc /home/vagrant/.inputrc
 dos2unix /home/vagrant/.bashrc
-d022unix /home/vagrant/.inputrc
+dos2unix /home/vagrant/.inputrc
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv xwing -p $(which python3)

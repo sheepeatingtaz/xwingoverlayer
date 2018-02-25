@@ -2,6 +2,7 @@
 from django.conf.urls import url
 
 from matches.views.matches import MatchView, ControlView, CreateMatchView, ListMatchView
+app_name = "matches"
 
 urlpatterns = [
     url(r'^create/$', CreateMatchView.as_view(), name='create'),

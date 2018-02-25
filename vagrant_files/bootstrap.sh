@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get dist-upgrade # In case the box is old.
-apt-get install -q -y --force-yes python3 python git python-pip pkg-config redis-server redis-tools npm python-dev supervisor build-essential python3-dev python-pip multitail dos2unix ntp ntpdate
+apt update
+apt -q -y install --force-yes squid-deb-proxy
+apt -y --force-yes upgrade # In case the box is old.
+apt install -q -y --force-yes python3 python git python-pip pkg-config redis-server redis-tools npm python-dev supervisor build-essential python3-dev python-pip multitail dos2unix ntp ntpdate
 echo "Europe/London" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 apt-get upgrade -y

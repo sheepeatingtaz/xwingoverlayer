@@ -1,0 +1,55 @@
+{
+  "name": "Slippy d",
+  "points": 100,
+  "faction": "imperial",
+  "version": "1.0.0",
+  "description": "",
+  "pilots": [
+    {
+      "name": "colonelvessery",
+      "ship": "tiedefender",
+      "upgrades": {
+        "ept": [
+          "swarmleader"
+        ],
+        "title": [
+          "tiex7"
+        ]
+      }
+    },
+    {
+      "name": "countessryad",
+      "ship": "tiedefender",
+      "upgrades": {
+        "ept": [
+          "pushthelimit"
+        ],
+        "title": [
+          "tiex7"
+        ],
+        "mod": [
+          "twinionenginemkii"
+        ]
+      }
+    },
+    {
+      "name": "deltasquadronpilot",
+      "ship": "tiedefender",
+      "upgrades": {
+        "title": [
+          "tiex7"
+        ]
+      }
+    }
+  ],
+  "vendor": {
+    "aurora": {
+      "builder": "Aurora Squad Builder",
+      "builder_url": "https://itunes.apple.com/us/app/aurora-squad-builder/id1020767927?mt=8",
+      "maxpoints": 100,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+    "version": "0.3.0",
+    "name": "Mad Jake",
+    "faction": "rebel",
+    "points": 100,
+    "pilots": [
+        {
+            "name": "jakefarrell",
+            "ship": "awing",
+            "points": 32,
+            "upgrades": {
+                "title": [
+                    "awingtestpilot"
+                ],
+                "missile": [
+                    "cruisemissiles"
+                ],
+                "ept": [
+                    "veteraninstincts",
+                    "intensity"
+                ],
+                "mod": [
+                    "autothrusters"
+                ]
+            }
+        },
+        {
+            "name": "ahsokatano",
+            "ship": "tiefighter",
+            "points": 19,
+            "upgrades": {
+                "ept": [
+                    "veteraninstincts"
+                ],
+                "mod": [
+                    "capturedtie"
+                ]
+            }
+        },
+        {
+            "name": "mirandadoni",
+            "ship": "kwing",
+            "points": 49,
+            "upgrades": {
+                "turret": [
+                    "twinlaserturret"
+                ],
+                "torpedo": [
+                    "extramunitions"
+                ],
+                "crew": [
+                    "rey"
+                ],
+                "bomb": [
+                    "clustermines",
+                    "connernet"
+                ],
+                "mod": [
+                    "advancedslam"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 732764,
+            "link": "http://xwing-builder.co.uk/view/732764/mad-jake",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}

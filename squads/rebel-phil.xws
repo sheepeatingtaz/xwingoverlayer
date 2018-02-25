@@ -1,0 +1,64 @@
+{
+  "version": "0.3.0",
+  "name": "Rebel Phil",
+  "faction": "rebel",
+  "points": 99,
+  "pilots": [
+    {
+      "name": "dashrendar",
+      "ship": "yt2400",
+      "points": 56,
+      "upgrades": {
+        "ept": [
+          "lonewolf"
+        ],
+        "cannon": [
+          "heavylasercannon"
+        ],
+        "crew": [
+          "rey"
+        ],
+        "title": [
+          "outrider"
+        ],
+        "mod": [
+          "smugglingcompartment",
+          "countermeasures"
+        ],
+        "illicit": [
+          "riggedcargochute"
+        ]
+      }
+    },
+    {
+      "name": "poedameron-swx57",
+      "ship": "t70xwing",
+      "points": 43,
+      "upgrades": {
+        "title": [
+          "blackone"
+        ],
+        "amd": [
+          "r2d2"
+        ],
+        "tech": [
+          "advancedoptics"
+        ],
+        "ept": [
+          "veteraninstincts"
+        ],
+        "mod": [
+          "autothrusters"
+        ]
+      }
+    }
+  ],
+  "vendor": {
+    "voidstate": {
+      "squadron_id": 810804,
+      "link": "http://xwing-builder.co.uk/view/810804/rebel-phil",
+      "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+      "builder_link": "http://xwing-builder.co.uk/build"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+    "version": "0.3.0",
+    "name": "Resistance",
+    "faction": "rebel",
+    "points": 128,
+    "description": "vs Hannah",
+    "pilots": [
+        {
+            "name": "poedameron-swx57",
+            "ship": "t70xwing",
+            "points": 44,
+            "upgrades": {
+                "title": [
+                    "blackone"
+                ],
+                "amd": [
+                    "bb8"
+                ],
+                "torpedo": [
+                    "protontorpedoes"
+                ],
+                "tech": [
+                    "primedthrusters"
+                ],
+                "ept": [
+                    "swarmleader"
+                ],
+                "mod": [
+                    "integratedastromech"
+                ]
+            }
+        },
+        {
+            "name": "niennunb",
+            "ship": "t70xwing",
+            "points": 40,
+            "upgrades": {
+                "amd": [
+                    "r3a2"
+                ],
+                "torpedo": [
+                    "protontorpedoes"
+                ],
+                "tech": [
+                    "patternanalyzer"
+                ],
+                "ept": [
+                    "pushthelimit"
+                ],
+                "mod": [
+                    "integratedastromech"
+                ]
+            }
+        },
+        {
+            "name": "greensquadronpilot",
+            "ship": "awing",
+            "points": 22,
+            "upgrades": {
+                "title": [
+                    "awingtestpilot"
+                ],
+                "missile": [
+                    "chardaanrefit"
+                ],
+                "ept": [
+                    "snapshot",
+                    "crackshot"
+                ],
+                "mod": [
+                    "autothrusters"
+                ]
+            }
+        },
+        {
+            "name": "greensquadronpilot",
+            "ship": "awing",
+            "points": 22,
+            "upgrades": {
+                "title": [
+                    "awingtestpilot"
+                ],
+                "missile": [
+                    "chardaanrefit"
+                ],
+                "ept": [
+                    "snapshot",
+                    "crackshot"
+                ],
+                "mod": [
+                    "autothrusters"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 802468,
+            "link": "http://xwing-builder.co.uk/view/802468/resistance",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}

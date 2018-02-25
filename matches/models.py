@@ -17,7 +17,7 @@ class MatchUpgrade(models.Model):
         #     description += " (removed)"
         return description
 
-    upgrade = models.ForeignKey(Upgrade)
+    upgrade = models.ForeignKey(Upgrade, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
 
 
@@ -51,11 +51,11 @@ class MatchPilot(models.Model):
             )
         return "".join(upgrades)
 
-    pilot = models.ForeignKey(Pilot)
+    pilot = models.ForeignKey(Pilot, on_delete=models.CASCADE)
     points = models.IntegerField(default=0)
 
     upgrades = models.ManyToManyField(MatchUpgrade, blank=True)
-    stats = models.ForeignKey(StatisticSet)
+    stats = models.ForeignKey(StatisticSet, on_delete=models.CASCADE)
 
 
 class Squad(models.Model):
@@ -102,7 +102,7 @@ class Match(models.Model):
     def get_overlay_url(self):
         return reverse_lazy('matches:overlay', kwargs={'pk': self.id})
 
-    squad_one = models.ForeignKey(Squad, related_name="list_one")
-    squad_two = models.ForeignKey(Squad, related_name="list_two")
+    squad_one = models.ForeignKey(Squad, related_name="list_one", on_delete=models.CASCADE)
+    squad_two = models.ForeignKey(Squad, related_name="list_two", on_delete=models.CASCADE)
     start_time = models.DateTimeField(blank=True, null=True)
     match_minutes = models.IntegerField(default=75)

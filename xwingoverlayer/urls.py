@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^clear/$', DeleteDataView.as_view(), name='delete'),
-    url(r'^match/', include('matches.urls.matches', namespace='matches')),
-    url(r'^squad/', include('matches.urls.squad', namespace='squad')),
+    url(r'^match/', include('matches.urls.matches')),
+    url(r'^squad/', include('matches.urls.squad')),
 ]
