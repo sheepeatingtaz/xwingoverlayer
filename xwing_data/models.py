@@ -1,6 +1,6 @@
+import re
 from collections import OrderedDict
 
-import re
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -23,6 +23,7 @@ class XWSBase(Base):
 
     id = models.IntegerField(unique=True, primary_key=True)
     xws = models.CharField(max_length=100)
+
 
 class Faction(Base):
     XWS_MAP = {

@@ -1,0 +1,55 @@
+{
+    "version": "0.3.0",
+    "name": "SlippyD",
+    "faction": "imperial",
+    "points": 100,
+    "pilots": [
+        {
+            "name": "colonelvessery",
+            "ship": "tiedefender",
+            "points": 36,
+            "upgrades": {
+                "ept": [
+                    "swarmleader"
+                ],
+                "title": [
+                    "tiex7"
+                ]
+            }
+        },
+        {
+            "name": "countessryad",
+            "ship": "tiedefender",
+            "points": 36,
+            "upgrades": {
+                "ept": [
+                    "pushthelimit"
+                ],
+                "title": [
+                    "tiex7"
+                ],
+                "mod": [
+                    "twinionenginemkii"
+                ]
+            }
+        },
+        {
+            "name": "deltasquadronpilot",
+            "ship": "tiedefender",
+            "points": 28,
+            "upgrades": {
+                "title": [
+                    "tiex7"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 810825,
+            "link": "http://xwing-builder.co.uk/view/810825/slippyd",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
+}

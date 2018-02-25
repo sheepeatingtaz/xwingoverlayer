@@ -135,7 +135,7 @@ BOWER_INSTALLED_APPS = (
     'xwing-miniatures-font',
     'bootstrap',
     'jQuery.Marquee',
-    'components-font-awesome',
+    'components-font-awesome#5.0.6',
     'bootstrap-combobox',
     'eonasdan-bootstrap-datetimepicker',
     'bootstrap-toggle',
