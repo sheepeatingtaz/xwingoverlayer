@@ -42,7 +42,7 @@
     color: #eeea1e;
 }
 
-.shields, .sheild {
+.shields, .shield {
     color: #7fd5e7;
 }
 
@@ -122,20 +122,23 @@
     border-color: #c9c519;
 }
 
-.btn-shields {
+.btn-shields, .btn-shield {
     color: #ffffff;
     background-color: #7fd5e7;
     border-color: #7fd5e7;
 }
 
 .btn-shields:focus,
-.btn-shields.focus {
+.btn-shields.focus,
+.btn-shield:focus,
+.btn-shield.focus{
     color: #ffffff;
     background-color: #6bb6c7;
     border-color: #6bb6c7;
 }
 
-.btn-shields:hover {
+.btn-shields:hover,
+.btn-shield:hover {
     color: #ffffff;
     background-color: #6bb6c7;
     border-color: #6bb6c7;
