@@ -204,11 +204,11 @@ def process_damage_deck(self, damage_entry, deck_type, delay=True):
 
     card, created = DamageCard.objects.update_or_create(
         name=damage_entry.get('name'),
+        deck=damage_deck,
         defaults={
             "text": damage_entry.get('text', ""),
             "type": damage_type,
             "amount": damage_entry.get('amount'),
-            "deck": damage_deck,
             "image": damage_entry['image'] if damage_entry.get('image', None) else None,
         }
     )

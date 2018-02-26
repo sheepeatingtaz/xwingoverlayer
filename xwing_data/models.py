@@ -76,7 +76,6 @@ class SlotType(Base):
     pass
 
 
-class StatisticSet(models.Model):
     def __str__(self):
         return "{}/{}/{}/{}/{}".format(
             self.skill,
@@ -92,7 +91,7 @@ class StatisticSet(models.Model):
         d["attack"] = self.attack
         d["agility"] = self.agility
         d["hull"] = self.hull
-        d["shields"] = self.shields
+        d["shield"] = self.shields
 
         return d
 
